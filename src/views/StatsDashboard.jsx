@@ -1,64 +1,57 @@
 import React from "react";
+import { motion } from "framer-motion";
 import StatsController from "../services/StatsController";
-import { Bar, Pie } from "react-chartjs-2";
-import "chart.js/auto";
 import "./styles/StatsDashboard.css";
 
 const StatsDashboard = ({ orders }) => {
-  const topProducts = StatsController.getTopProducts(orders);
-  const revenue = StatsController.getRevenueByProduct(orders);
-  const status = StatsController.getStatusDistribution(orders);
-  const averages = StatsController.getAveragePricePerProduct(orders);
+  const summaryText = StatsController.getSummaryText(orders);
+  const topProducts = StatsController.getTopProductsSummary(orders);
+  const status = StatsController.getStatusSummary(orders);
+  const customers = StatsController.getCustomerSummary(orders);
+
+  const entryAnim = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.1 },
+    }),
+  };
+
+  const Section = ({ title, icon, items }) => (
+    <motion.div className="info-card" variants={entryAnim} initial="hidden" animate="visible">
+      <h3><i className={`fa ${icon}`}></i> {title}</h3>
+      <ul>
+        {items.map((line, i) => (
+          <motion.li key={i} custom={i} variants={entryAnim}>
+            {line}
+          </motion.li>
+        ))}
+      </ul>
+    </motion.div>
+  );
 
   return (
-    <div className="stats-dashboard">
-      <h2>📊 Business Stats</h2>
+    <motion.div
+      className="stats-dashboard"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        visible: {
+          transition: { staggerChildren: 0.15 },
+        },
+      }}
+    >
+      <h2><i className="fa fa-line-chart"></i> Business Stats</h2>
 
-      <div className="chart-box">
-        <h3>Top Products</h3>
-        <Bar data={{
-          labels: topProducts.map(p => p.name),
-          datasets: [{
-            label: "Times Ordered",
-            data: topProducts.map(p => p.count),
-            backgroundColor: "#4bc0c0"
-          }]
-        }} />
+      <div className="summary-grid">
+        <Section title="Quick Summary" icon="fa-info-circle" items={summaryText} />
+        <Section title="Top Products" icon="fa-cutlery" items={topProducts} />
+        <Section title="Top Customers" icon="fa-user" items={customers} />
+        {/* <Section title="Revenue Highlights" icon="fa-money" items={revenue} /> */}
+        <Section title="Order Status Breakdown" icon="fa-tasks" items={status} />
       </div>
-
-      <div className="chart-box">
-        <h3>Revenue by Product</h3>
-        <Bar data={{
-          labels: revenue.map(p => p.name),
-          datasets: [{
-            label: "Revenue (R)",
-            data: revenue.map(p => p.total),
-            backgroundColor: "#36a2eb"
-          }]
-        }} />
-      </div>
-
-      <div className="chart-box">
-        <h3>Order Status</h3>
-        <Pie data={{
-          labels: status.map(s => s.status),
-          datasets: [{
-            label: "Orders",
-            data: status.map(s => s.count),
-            backgroundColor: ["#FF6384", "#FFCE56", "#4BC0C0", "#9966FF"]
-          }]
-        }} />
-      </div>
-
-      <div className="average-table">
-        <h3>Average Price Per Product</h3>
-        <ul>
-          {averages.map(p => (
-            <li key={p.name}>{p.name}: <strong>R{p.average}</strong></li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    </motion.div>
   );
 };
 

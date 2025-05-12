@@ -48,7 +48,6 @@ const StoreOrderingUI = ({
 
       {/* Navbar */}
       <nav className="navbar">
-        <Link to="/">Shop</Link>
         <Link to="/orders">My Orders</Link>
         <Link to="/admin">Admin Panel</Link>
       </nav>

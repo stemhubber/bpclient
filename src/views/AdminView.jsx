@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./styles/AdminView.css";
 import { convertIDToTime } from "../utils/utils";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 const AdminView = ({ orders, onStatusChange }) => {
   const [showConfirm, setShowConfirm] = useState(false);
@@ -36,14 +38,15 @@ const AdminView = ({ orders, onStatusChange }) => {
   };
 
   const handleConfirmStatusChange = () => {
-    onStatusChange(selectedOrder, newStatus);
-    setSuccessMessage(`Order #${selectedOrder} updated to ${newStatus}.`);
-    setSelectedOrder(null);
-    setNewStatus("");
-    setShowConfirm(false);
-    setTimeout(()=>{
-      handleCloseSuccess();
-    }, 3000)
+      onStatusChange(selectedOrder, newStatus);
+      setSuccessMessage(`Order #${selectedOrder} updated to ${newStatus}.`);
+      setSelectedOrder(null);
+      setNewStatus("");
+      setShowConfirm(false);
+      setTimeout(()=>{
+        handleCloseSuccess();
+      }, 3000);
+    
   };
 
   const handleCloseSuccess = () => {
@@ -64,11 +67,11 @@ const AdminView = ({ orders, onStatusChange }) => {
   return (
     <div className="admin-panel">
       <h2 className="admin-title">
-        <i className="fas fa-clipboard-list"></i> Manage Cart Orders
+        <i className="fas fa-clipboard-list"></i> Manage Orders
       </h2>
 
       {orders.length === 0 ? (
-        <p className="no-orders">No cart items yet.</p>
+        <p className="no-orders">No orders yet.</p>
       ) : (
         statuses.map(status => (
           ordersByStatus[status]?.length > 0 && (
@@ -77,9 +80,16 @@ const AdminView = ({ orders, onStatusChange }) => {
                 <i className="fas fa-tasks"></i> {status} Orders [{ordersByStatus[status]?.length}]
               </h3>
               <div className="cart-items-grid">
-                {ordersByStatus[status].map(order => (
-                  <div key={order.id} className="cart-item-card">
-                    <div className="cart-item-header">
+                {ordersByStatus[status].map((order, index) => (
+                  <motion.div
+                        key={order.id}
+                        className="cart-item-card"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.05 }}
+                      >
+
+                    <div className={`cart-item-header ${order.id === selectedOrder? 'selected-admin-order':''}`}>
                       <h4>Order #{order.id}</h4>
                       <p>{`${order?.user?.name} - ${order?.user?.uid}`}</p>
                       <p>{`${order?.timestamp}`}</p>
@@ -105,7 +115,7 @@ const AdminView = ({ orders, onStatusChange }) => {
                         ))}
                       </select>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -115,8 +125,21 @@ const AdminView = ({ orders, onStatusChange }) => {
 
       {/* Confirmation Modal */}
       {showConfirm && (
-        <div className="modal-overlay">
-          <div className="modal-content">
+        <AnimatePresence>
+              <motion.div
+                className="modal-overlay"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <motion.div
+                  className="modal-content"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+
             <h3>Confirm Status Update</h3>
             <p>Are you sure you want to update <strong>Order #{selectedOrder}</strong> to <strong>{newStatus}</strong>?</p>
             <div className="modal-buttons">
@@ -127,8 +150,9 @@ const AdminView = ({ orders, onStatusChange }) => {
                 Cancel
               </button>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
+        </AnimatePresence>
       )}
 
       {/* Success Message */}
