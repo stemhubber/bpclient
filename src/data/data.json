@@ -1,0 +1,373 @@
+{
+    "menu": [
+      {
+        "id": 1,
+        "name": "Cape Town",
+        "large": 160,
+        "small": 85,
+        "description": "Mushroom, Onion, Greenpepper, Beef Mince, Chicken & Fresh Tomato",
+        "image": "https://placehold.co/250x250?text=Cape+Town",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 2,
+        "name": "Khayelitsha Pizza",
+        "large": 120,
+        "small": 65,
+        "description": "Mushroom, Onion, Greenpepper, Beef, Fresh Tomato",
+        "image": "https://placehold.co/250x250?text=Khayelitsha+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 3,
+        "name": "Sweet 'n Lovely Pizza",
+        "large": 130,
+        "small": 75,
+        "description": "Mushroom, Onion, Greenpepper, Ham, Bacon, Chorizo & Fresh Tomato",
+        "image": "https://placehold.co/250x250?text=Sweet+%27n+Lovely+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 4,
+        "name": "Rib Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Pork, Onion, Greenpepper, Rib off the bone with Sauce",
+        "image": "https://placehold.co/250x250?text=Rib+Pizza",
+        "isAvailable": true,
+        "waitingTime": "18 minutes"
+      },
+      {
+        "id": 5,
+        "name": "Vegetarian Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Mushroom, Onion, Greenpepper, Pineapple, Feta & Olives",
+        "image": "https://placehold.co/250x250?text=Vegetarian+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 6,
+        "name": "Margherita Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Tomato base, Origanum, Cheese",
+        "image": "https://placehold.co/250x250?text=Margherita+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 7,
+        "name": "Ilitha Park Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Mushroom, Onion, Greenpepper, Ham & Pineapple",
+        "image": "https://placehold.co/250x250?text=Ilitha+Park+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 8,
+        "name": "Mexican Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Onion, Greenpepper, Mince & Chillies",
+        "image": "https://placehold.co/250x250?text=Mexican+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 9,
+        "name": "Hawaiian Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Ham & Pineapple",
+        "image": "https://placehold.co/250x250?text=Hawaiian+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 10,
+        "name": "Regina Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Onion, Greenpepper, Mushroom & Bacon",
+        "image": "https://placehold.co/250x250?text=Regina+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 11,
+        "name": "Meatlovers Pizza",
+        "large": 130,
+        "small": 75,
+        "description": "Bacon, Ham, Salami, Chorizo, Peppadew & Spring Onion",
+        "image": "https://placehold.co/250x250?text=Meatlovers+Pizza",
+        "isAvailable": true,
+        "waitingTime": "18 minutes"
+      },
+      {
+        "id": 12,
+        "name": "Four Seasons Pizza",
+        "large": 130,
+        "small": 75,
+        "description": "Onion, Greenpepper, Mushroom, Ham, Chorizo & Salami",
+        "image": "https://placehold.co/250x250?text=Four+Seasons+Pizza",
+        "isAvailable": true,
+        "waitingTime": "18 minutes"
+      },
+      {
+        "id": 13,
+        "name": "Greek Pizza",
+        "large": 130,
+        "small": 75,
+        "description": "Onion, Greenpepper, Ham, Cheese & Olives",
+        "image": "https://placehold.co/250x250?text=Greek+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 14,
+        "name": "Create Your Own Pizza",
+        "large": 130,
+        "small": 75,
+        "description": "Create your own topping combinations",
+        "image": "https://placehold.co/250x250?text=Create+Your+Own+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 15,
+        "name": "Gypsy Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Onion, Greenpepper, Mushroom & Chicken",
+        "image": "https://placehold.co/250x250?text=Gypsy+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 16,
+        "name": "Chicken Mayo Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Onion, Greenpepper, Chicken Mayo & Cheese",
+        "image": "https://placehold.co/250x250?text=Chicken+Mayo+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 17,
+        "name": "Sweet & Sour Chicken Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Chicken with a sweet and sour sauce",
+        "image": "https://placehold.co/250x250?text=Sweet+%26+Sour+Chicken+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 18,
+        "name": "Tropical Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Mushroom, Cheese, Bacon & Banana",
+        "image": "https://placehold.co/250x250?text=Tropical+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 19,
+        "name": "Seafood Pizza",
+        "large": 130,
+        "small": 75,
+        "description": "Seafood Mix, Tuna, Mussel & Cheese",
+        "image": "https://placehold.co/250x250?text=Seafood+Pizza",
+        "isAvailable": true,
+        "waitingTime": "18 minutes"
+      },
+      {
+        "id": 20,
+        "name": "Goulash Pizza (HOT)",
+        "large": 130,
+        "small": 75,
+        "description": "Steak Goulash, Mushroom, Pineapple & Cheese",
+        "image": "https://placehold.co/250x250?text=Goulash+Pizza",
+        "isAvailable": true,
+        "waitingTime": "18 minutes"
+      },
+      {
+        "id": 21,
+        "name": "Mfuleni Pizza",
+        "large": 130,
+        "small": 75,
+        "description": "Mince, Onion, Greenpepper, Bacon, Feta Cheese & Cheese",
+        "image": "https://placehold.co/250x250?text=Mfuleni+Pizza",
+        "isAvailable": true,
+        "waitingTime": "18 minutes"
+      },
+      {
+        "id": 22,
+        "name": "Chicken Tikka Pizza (HOT)",
+        "large": 115,
+        "small": 60,
+        "description": "Chicken Tikka, Onion, Greenpepper & Cheese",
+        "image": "https://placehold.co/250x250?text=Chicken+Tikka+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 23,
+        "name": "Lucky Pizza",
+        "large": 115,
+        "small": 60,
+        "description": "Mushrooms, Pilchard & Cheese",
+        "image": "https://placehold.co/250x250?text=Lucky+Pizza",
+        "isAvailable": true,
+        "waitingTime": "15 minutes"
+      },
+      {
+        "id": 24,
+        "name": "Garlic Pita",
+        "large": 40,
+        "small": 30,
+        "description": "Base, Garlic & Herbs, Cheese optional",
+        "image": "https://placehold.co/250x250?text=Garlic+Pita",
+        "isAvailable": true,
+        "waitingTime": "10 minutes"
+      }
+    ],
+    "extra_toppings": [
+      { "name": "Feta Cheese", "price": 14 },
+      { "name": "Vegetable", "price": 10 },
+      { "name": "Ham", "price": 18 },
+      { "name": "Chorizo", "price": 18 },
+      { "name": "Ribs", "price": 20 },
+      { "name": "Chicken", "price": 20 },
+      { "name": "Bacon", "price": 20 },
+      { "name": "Mince", "price": 20 },
+      { "name": "Beef", "price": 20 },
+      { "name": "Seafood", "price": 20 },
+      { "name": "Salami", "price": 20 },
+      { "name": "Cheese", "price": 20 }
+    ],
+    "extra_packages": [
+            {
+            "id": 1,
+            "name": "1kg Mutton",
+            "price": 220,
+            "image": "https://placehold.co/250x250?text=1kg+Mutton",
+            "isAvailable": true,
+            "waitingTime": "25 minutes"
+            },
+            {
+            "id": 2,
+            "name": "500g Mutton",
+            "price": 100,
+            "image": "https://placehold.co/250x250?text=500g+Mutton",
+            "isAvailable": true,
+            "waitingTime": "20 minutes"
+            },
+            {
+            "id": 3,
+            "name": "1kg Rib with Chips",
+            "price": 200,
+            "image": "https://placehold.co/250x250?text=1kg+Rib+with+Chips",
+            "isAvailable": true,
+            "waitingTime": "25 minutes"
+            },
+            {
+            "id": 4,
+            "name": "500g Rib with Chips",
+            "price": 100,
+            "image": "https://placehold.co/250x250?text=500g+Rib+with+Chips",
+            "isAvailable": true,
+            "waitingTime": "20 minutes"
+            },
+            {
+            "id": 5,
+            "name": "1kg Beef with Chips",
+            "price": 190,
+            "image": "https://placehold.co/250x250?text=1kg+Beef+with+Chips",
+            "isAvailable": true,
+            "waitingTime": "25 minutes"
+            },
+            {
+            "id": 6,
+            "name": "500g Beef with Chips",
+            "price": 90,
+            "image": "https://placehold.co/250x250?text=500g+Beef+with+Chips",
+            "isAvailable": true,
+            "waitingTime": "20 minutes"
+            },
+            {
+            "id": 7,
+            "name": "Chicken & Chips",
+            "price": 60,
+            "image": "https://placehold.co/250x250?text=Chicken+%26+Chips",
+            "isAvailable": true,
+            "waitingTime": "15 minutes"
+            },
+            {
+            "id": 8,
+            "name": "Half Chicken & Chips",
+            "price": 80,
+            "image": "https://placehold.co/250x250?text=Half+Chicken+%26+Chips",
+            "isAvailable": true,
+            "waitingTime": "15 minutes"
+            },
+            {
+            "id": 9,
+            "name": "Quarter Chicken & Chips",
+            "price": 60,
+            "image": "https://placehold.co/250x250?text=Quarter+Chicken+%26+Chips",
+            "isAvailable": true,
+            "waitingTime": "15 minutes"
+            },
+            {
+            "id": 10,
+            "name": "Russian x2 with Chips",
+            "price": 80,
+            "image": "https://placehold.co/250x250?text=Russian+x2+with+Chips",
+            "isAvailable": true,
+            "waitingTime": "15 minutes"
+            },
+            {
+            "id": 11,
+            "name": "Grilled Wings with Chips",
+            "price": 90,
+            "image": "https://placehold.co/250x250?text=Grilled+Wings+with+Chips",
+            "isAvailable": true,
+            "waitingTime": "20 minutes"
+            },
+            {
+            "id": 12,
+            "name": "Lasagne Large",
+            "price": 90,
+            "image": "https://placehold.co/250x250?text=Lasagne+Large",
+            "isAvailable": true,
+            "waitingTime": "25 minutes"
+            },
+            {
+            "id": 13,
+            "name": "Lasagne Small",
+            "price": 60,
+            "image": "https://placehold.co/250x250?text=Lasagne+Small",
+            "isAvailable": true,
+            "waitingTime": "20 minutes"
+            },
+            {
+            "id": 14,
+            "name": "Burger, Veggies & Chips",
+            "price": 60,
+            "image": "https://placehold.co/250x250?text=Burger+%26+Veggies+Chips",
+            "isAvailable": true,
+            "waitingTime": "15 minutes"
+            }
+        ]
+  }
+  

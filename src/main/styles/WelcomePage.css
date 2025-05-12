@@ -1,0 +1,271 @@
+:root {
+  --primary: #29bd00;
+  --primary-dark: #1e9600;
+  --gradient: linear-gradient(135deg, #29bd00, #00e06c, #00e05d);
+  --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.2);
+  --bg-blur: blur(10px);
+  --text: #222;
+  --muted: #555;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bp-container {
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: #f3f4f6;
+}
+
+/* Header */
+.bp-header {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+}
+
+.bp-header-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bp-logo-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bp-logo {
+  height: 40px;
+}
+
+.bp-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+/* Responsive Nav */
+.bp-nav {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.bp-nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.bp-nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.bp-nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero with Clipped Shape */
+.bp-hero {
+  background: var(--gradient);
+  color: var(--white);
+  text-align: center;
+  padding: 6rem 2rem 5rem;
+  clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+.bp-hero h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.bp-hero p {
+  font-size: 1.2rem;
+  max-width: 640px;
+  margin: auto;
+  line-height: 2.5;
+}
+
+/* Glassmorphic Button */
+.bp-button {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background: var(--glass);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  font-weight: 600;
+  backdrop-filter: var(--bg-blur);
+  -webkit-backdrop-filter: var(--bg-blur);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.bp-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.bp-button.white {
+  color: var(--primary-dark);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #ddd;
+}
+
+/* Section General */
+.bp-section {
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+  background: var(--white);
+  clip-path: ellipse(150% 100% at 50% 0%);
+}
+
+.bp-section h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.bp-section p {
+  max-width: 720px;
+  margin: auto;
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* Features */
+.bp-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.bp-feature-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  padding: 2rem;
+  width: 280px;
+  box-shadow: var(--shadow);
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.bp-feature-card:hover {
+  transform: translateY(-6px);
+}
+
+.bp-feature-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.bp-feature-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* About Section Curve */
+.about {
+  background: #f2fff0;
+  clip-path: ellipse(140% 100% at 50% 0%);
+}
+
+/* CTA Section */
+.bp-cta {
+  background: var(--primary-dark);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+.bp-cta h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.bp-cta p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+/* Footer */
+.bp-footer {
+  background: #111;
+  color: #bbb;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .bp-header{
+    position: relative;
+  }
+
+  .bp-nav a{
+    text-shadow: #ceffed 1px 1px;
+  }
+  .bp-header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .bp-nav {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .bp-hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .bp-section h3 {
+    font-size: 1.6rem;
+  }
+
+  .bp-features {
+    flex-direction: column;
+  }
+
+  .bp-feature-card {
+    width: 80%;
+  }
+
+  .bp-button {
+    width: 100%;
+    max-width: 280px;
+  }
+}

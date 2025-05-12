@@ -1,0 +1,106 @@
+.product-card-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+  }
+  
+  .product-card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .product-card-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  .product-card-waiting,
+  .product-card-price {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0.25rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+/* Styling for the Order Button */
+.product-card-order-button {
+  margin-top: 1rem;
+  background-color: #666665; /* Base green color */
+  color: rgb(242, 236, 236); /* Light grey text */
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px; /* Rounded corners */
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase; /* Capitalize text */
+  cursor: pointer; /* Change cursor to pointer for better interactivity */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover effect for the Order Button */
+.product-card-order-button:hover {
+  background-color: #c5b0b0; /* Red background on hover */
+  transform: translateY(-4px); /* Lift the button slightly */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow for hover effect */
+}
+
+/* Active state when button is clicked */
+.product-card-order-button:active {
+  background-color: #a39a9a; /* Darker red when clicked */
+  transform: translateY(-2px); /* Button slightly sinks when clicked */
+}
+
+/* Focus state for accessibility */
+.product-card-order-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 2px rgba(41, 189, 0, 0.7); /* Green outline when focused */
+}
+@media (max-width: 768px) {
+  .product-card-container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .product-card-image {
+    height: 160px;
+  }
+
+  .product-card-order-button {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
+  @media (max-width: 480px) {
+    .product-card-image {
+      height: 140px;
+    }
+  
+    .product-card-name {
+      font-size: 1.1rem;
+    }
+  
+    .product-card-order-button {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+    }
+  }

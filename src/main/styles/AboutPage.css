@@ -1,0 +1,85 @@
+.about-container {
+    max-width: 860px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    color: #29bd00;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-description {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+  
+  .about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .about-feature-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .about-feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  }
+  
+  .about-feature-icon {
+    font-size: 2rem;
+    color: #29bd00;
+    margin-bottom: 0.8rem;
+  }
+  
+  .about-feature-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .about-feature-card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .about-section {
+    margin-top: 2rem;
+    background: #f7f7f7;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .about-section h3 {
+    margin-bottom: 0.5rem;
+    color: #222;
+  }
+  
+  .about-section p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .about-footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #999;
+  }
+  

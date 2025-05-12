@@ -1,0 +1,169 @@
+.admin-panel {
+  padding: 2rem;
+  background: #f7f9fc;
+  border-radius: 12px;
+}
+
+.admin-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.admin-panel .no-orders {
+  text-align: center;
+  margin-top: 2rem;
+  color: #777;
+}
+
+/* Group section */
+.admin-panel .cart-group {
+  margin-bottom: 2rem;
+}
+
+.admin-panel .cart-status-title {
+  color: #444;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Responsive Grid for Items */
+.admin-panel .cart-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Single Cart Item */
+.admin-panel .cart-item-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-panel .cart-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.admin-panel .cart-item-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.admin-panel .cart-item-body {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.admin-panel .cart-item-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-panel .cart-item-label {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.admin-panel .cart-item-select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.confirm-btn, .cancel-btn {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Success Toast */
+.success-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.success-toast button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

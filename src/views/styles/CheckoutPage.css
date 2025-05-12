@@ -1,0 +1,141 @@
+/* CheckoutPage.css */
+
+.checkout-wrapper {
+  max-width: 540px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.checkout-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #29bd00;
+  margin-bottom: 1.5rem;
+}
+
+.checkout-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.checkout-section p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+.checkout-receipt {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.checkout-label {
+  font-size: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #222;
+}
+
+.checkout-select {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.checkout-note {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 1rem;
+  resize: vertical;
+}
+
+.checkout-status {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2e7d32;
+  animation: fadeIn 0.3s ease;
+}
+
+.checkout-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.checkout-btn {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn.primary {
+  background-color: #29bd00;
+  color: white;
+}
+
+.checkout-btn.primary:hover:not(:disabled) {
+  background-color: #208c00;
+}
+
+.checkout-btn.secondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.checkout-btn.secondary:hover:not(:disabled) {
+  background-color: #c8c8c8;
+}
+
+.checkout-btn:disabled {
+  background-color: #a1db99;
+  cursor: not-allowed;
+}
+
+/* ✅ Responsive Layout */
+@media (max-width: 600px) {
+  .checkout-wrapper {
+    padding: 1.5rem 1rem;
+    margin: 1rem;
+  }
+
+  .checkout-heading {
+    font-size: 1.5rem;
+  }
+
+  .checkout-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .checkout-btn {
+    width: 100%;
+  }
+}
