@@ -3,7 +3,7 @@ import "./styles/ProductCard.css";
 
 const ProductCard = ({ product, onSelect }) => {
   return (
-    <div className="product-card-container" onClick={() => onSelect(product)}>
+    <div className="product-card-container">
       <img
         src={product.img}
         alt={product.name}
@@ -19,14 +19,14 @@ const ProductCard = ({ product, onSelect }) => {
       <p className="product-card-price">
          R{product.price}
       </p>
-      {/* {onSelect && (
+      {onSelect && (
         <button
           className="product-card-order-button"
           onClick={() => onSelect(product)}
         >
           <i className="fas fa-plus"></i> Order
         </button>
-      )} */}
+      )}
     </div>
   );
 };
