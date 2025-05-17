@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./styles/AdminView.css";
-import { convertIDToTime } from "../utils/utils";
+import { convertIDToTime, playOrderSound } from "../utils/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { soundMap } from "../utils/Constants";
+// import VoiceOrderCommand from "./VoiceOrderCommand";
 
 
 const AdminView = ({ orders, onStatusChange }) => {
@@ -38,6 +40,7 @@ const AdminView = ({ orders, onStatusChange }) => {
   };
 
   const handleConfirmStatusChange = () => {
+      playOrderSound(soundMap.button_click);
       onStatusChange(selectedOrder, newStatus);
       setSuccessMessage(`Order #${selectedOrder} updated to ${newStatus}.`);
       setSelectedOrder(null);
@@ -66,6 +69,7 @@ const AdminView = ({ orders, onStatusChange }) => {
 
   return (
     <div className="admin-panel">
+      {/* <VoiceOrderCommand/> */}
       <h2 className="admin-title">
         <i className="fas fa-clipboard-list"></i> Manage Orders
       </h2>

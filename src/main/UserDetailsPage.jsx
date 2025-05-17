@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import './styles/UserDetailsPage.css';
 import { useNavigate } from 'react-router-dom';
+import { playOrderSound } from '../utils/utils';
+import { soundMap } from '../utils/Constants';
 
 const UserDetailsPage = ({ userData }) => {
   const [showModal, setShowModal] = useState(false);
@@ -61,6 +63,15 @@ const UserDetailsPage = ({ userData }) => {
     }
 
   }
+  const switchToAdmin = ()=>{
+    const pin = window.prompt("Enter admin pin");
+    if(pin === '0000'){
+      sessionStorage.setItem('bitepilot-admin',true);
+      playOrderSound(soundMap.status_changed);
+      setShowModal(false);
+    }
+
+  }
 
   return (
     <div className="user-details-component-wrapper">
@@ -84,6 +95,7 @@ const UserDetailsPage = ({ userData }) => {
               </li>
             </ul>
             <div className='user-profile-action-btn'>
+                <button className="user-profile-close-btn" onClick={switchToAdmin}>A</button>
                 <button className="user-profile-close-btn" onClick={toggleModal}>Close</button>
                 <button className="user-profile-logout-btn" onClick={logUserOut}>Log out</button>
               </div>

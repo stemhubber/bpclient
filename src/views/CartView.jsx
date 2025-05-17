@@ -16,14 +16,14 @@ const CartView = ({cartMessage,cart,handleRemoveFromCart,calculateTotal,handleAd
           <h2>Your Cart</h2>
           <p className="cart-message">{cartMessage}</p>
           <div className="cart-items">
-            {cart.map(product => (
-              <div key={product.id} className="cart-item">
+            {cart.map((product, index) => (
+              <div key={index} className="cart-item">
                 <img src={product.img} alt={product.name} />
                 <div>
                   <h4>{product.name}</h4>
                   <p>R{product.price}</p>
                 </div>
-                <button onClick={() => handleRemoveFromCart(product.id)}>
+                <button onClick={() => handleRemoveFromCart(product.id, index)}>
                   <i className="fas fa-trash"></i>
                 </button>
               </div>

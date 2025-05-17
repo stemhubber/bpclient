@@ -83,7 +83,7 @@ const CheckoutPage = ({ order, handleConfirmAndPay, user, setUser, calculateTota
         <div className="checkout-actions">
           <button
             className="checkout-btn secondary"
-            onClick={() => navigate('/')}
+            onClick={() => navigate(-1)}
             disabled={loading}
           >
             Back

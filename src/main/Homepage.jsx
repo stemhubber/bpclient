@@ -17,6 +17,8 @@ import StoreRegistrationForm from '../views/StoreRegistrationForm';
 import { StoreController } from "../services/StoreController";
 import WelcomePage from "./WelcomePage";
 import StoreOrderingUI from "../views/StoreOrderingUI";
+import { playOrderSound } from "../utils/utils";
+import { soundMap } from "../utils/Constants";
 
 function HomePage() {
   const productController = new ProductController();
@@ -40,8 +42,10 @@ function HomePage() {
   
     // Start listening to orders in real-time
     const unsubscribe = OrderService.listenToOrders((liveOrders) => {
-      console.log(liveOrders);
-      if (liveOrders) setOrders(liveOrders);
+      if (liveOrders) {
+        setOrders(liveOrders);
+        playOrderSound(soundMap.new_orders);
+      }
       setLoading(false); // stop spinner once first live data is in
     });
   
@@ -69,14 +73,16 @@ function HomePage() {
     }, []);
   
   const handleAddToCart = (product) => {
+    playOrderSound(soundMap.added);
     setCart(prev => [...prev, product]);
     setCartMessage("Added "+product.name);
     setShowCart(true);
   };
 
-  const handleRemoveFromCart = (productId) => {
-    setCart(prev => prev.filter(p => p.id !== productId));
-    setCartMessage("Remove one item!");
+  const handleRemoveFromCart = (productId, pindex) => {
+    playOrderSound(soundMap.error);
+    setCart(prev => prev.filter((p,index) => pindex !== index));
+    setCartMessage("Removed one item!");
     if (cart.length === 1) setShowCart(false);
   };
 
@@ -88,6 +94,7 @@ function HomePage() {
 
     try {
       const created_orders = await OrderService.createOrders(cart,payload);
+      playOrderSound(soundMap.created);
       setReceiptOrders(created_orders);
       setCart([]);
       setShowCart(false);

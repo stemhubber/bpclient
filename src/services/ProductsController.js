@@ -379,7 +379,7 @@ const productsData = {
       // Initialize with menu products data
       this.products = productsData.menu.flatMap((pd) => [
         new Product(pd.id, pd.name + " (Large)", pd.waitingTime, (10+pd.small)*2, pd.image, pd.isAvailable, pd.description),
-        new Product(pd.id, pd.name + " (Small)", pd.waitingTime, pd.small+10, pd.image, pd.isAvailable, pd.description)
+        new Product(pd.id+(productsData?.menu?.length+1), pd.name + " (Small)", pd.waitingTime, pd.small+10, pd.image, pd.isAvailable, pd.description)
       ]);
       this.extraToppings = productsData.extra_toppings;
       this.extraPackages = productsData.extra_packages.map((pd)=> new Product(pd.id, pd.name, pd.waitingTime, pd.price, pd.image, pd.isAvailable, pd.description));

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles/CustomerOrdersView.css";
 import UserOrderTracker from "./UserOrderTracker";
+import { speakText } from "../utils/utils";
 
 const CustomerOrdersView = ({ orders }) => {
 
@@ -22,6 +23,18 @@ const CustomerOrdersView = ({ orders }) => {
     Preparing: Object.values(ordersById).filter(order => order.status === "Preparing"),
     Collect: Object.values(ordersById).filter(order => order.status === "Ready"),
   };
+  if (sessionStorage.getItem('bitepilot-admin')){
+    let textToSpeech = 'Order number';
+    groupedOrders.Collect.forEach((order)=>{
+      const orderNum = order?.id?.split("-")[1];
+      textToSpeech += ", "+orderNum;
+    });
+    
+    speakText(textToSpeech);
+  }
+
+
+  
 
   const sections = [
     // { title: "Payment", icon: "fas fa-credit-card", key: "Payment" },

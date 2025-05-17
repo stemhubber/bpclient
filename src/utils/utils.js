@@ -1,3 +1,4 @@
+
 export const getUserCoordinates = () => {
     return new Promise((resolve, reject) => {
       if (!navigator.geolocation) {
@@ -87,4 +88,67 @@ export const sortFormattedDates = (dates, newestFirst = true)=> {
     return newestFirst ? dateB - dateA : dateA - dateB;
   });
 }
+
+export const playOrderSound = (action) => {
+  
+    const fileName = action;
+    if (!fileName) return;
+console.log('Playing sound');
+
+    const audio = new Audio(`/sounds/${fileName}`);
+    console.log(audio);
+    
+    audio.volume = 0.6; // optional: set volume
+    audio.play().catch((err) => {
+      console.warn('Sound playback failed:', err);
+    });
+  };
+
+  // utils/textToSpeech.js
+
+export const speakText = (text, options = {}) => {
+  if (!window.speechSynthesis) {
+    console.warn('SpeechSynthesis not supported in this browser.');
+    return;
+  }
+
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  // Optional settings
+  utterance.lang = options.lang || 'en-US';
+  utterance.pitch = options.pitch ?? 1;
+  utterance.rate = options.rate ?? 1;
+  utterance.volume = options.volume ?? 1;
+  utterance.voice = options.voice || null; // you can set a voice object if needed
+
+  window.speechSynthesis.cancel(); // cancel ongoing speech
+  window.speechSynthesis.speak(utterance);
+};
+
+
+export const listenForSpeechCommand = ({ onResult, onError, lang = 'en-US' }) => {
+    if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+      onError?.('Speech recognition not supported in this browser.');
+      return;
+    }
+
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = lang;
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      onResult?.(transcript);
+    };
+
+    recognition.onerror = (event) => {
+      onError?.(event.error);
+    };
+
+    recognition.start();
+  };
 
