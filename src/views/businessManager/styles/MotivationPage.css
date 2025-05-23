@@ -1,0 +1,85 @@
+/* Motivation Modal Styling */
+.motivation-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.motivation-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.motivation-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c7a4b;
+  margin-bottom: 1rem;
+}
+
+.motivation-sub {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.motivation-quote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #222;
+  background: #f7f9fa;
+  padding: 1.5rem;
+  border-left: 5px solid #2c7a4b;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.motivation-quote footer {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.motivation-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.motivation-close:hover {
+  color: #2c7a4b;
+}
+
+@media screen and (max-width: 600px) {
+  .motivation-title {
+    font-size: 1.6rem;
+  }
+  .motivation-sub {
+    font-size: 1rem;
+  }
+  .motivation-quote {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+}

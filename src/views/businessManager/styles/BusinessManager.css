@@ -1,0 +1,31 @@
+.business-manager-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.business-main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.business-main-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.business-tab-view {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.business-manager-container .store-site-error {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: red;
+  }

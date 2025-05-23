@@ -49,7 +49,7 @@ const StoreOrderingUI = ({
       {/* Navbar */}
       <nav className="navbar">
         <Link to="/orders">My Orders</Link>
-        <Link to="/admin">Admin Panel</Link>
+        <Link to={`/admin/${storeDetails?.id}`}>Admin Panel</Link>
       </nav>
       {!user && <AuthPage onUserLoggedIn={setUser} dontNavigate={true}/>}
 

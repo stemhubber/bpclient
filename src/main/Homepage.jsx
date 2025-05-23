@@ -19,6 +19,7 @@ import WelcomePage from "./WelcomePage";
 import StoreOrderingUI from "../views/StoreOrderingUI";
 import { playOrderSound } from "../utils/utils";
 import { soundMap } from "../utils/Constants";
+import BusinessManager from "../views/businessManager/BusinessManager";
 
 function HomePage() {
   const productController = new ProductController();
@@ -176,7 +177,7 @@ function HomePage() {
             />} />
             <Route path="/list" element={<StoreList stores={stores} />} />
             <Route path="/orders" element={<CustomerOrdersView orders={orders} />} />
-            <Route path="/admin" element={<AdminView orders={orders} onStatusChange={handleStatusChange} />} />
+            <Route path="/admin/:id" element={<AdminView orders={orders} onStatusChange={handleStatusChange} stores={stores} onChangeStoreDetails={setStoreDetails}/>} />
             <Route path="/print" element={<ReceiptView orders={receiptOrders} user={user} setSuccessOrder={setSuccessOrder} store={storeDetails}/>} />
             <Route path="/stats" element={<StatsDashboard orders={orders}/>} />
             <Route path="/login" element={<AuthPage user={user} onUserLoggedIn={setUser}/>} />
@@ -184,6 +185,7 @@ function HomePage() {
             <Route path="/checkout" element={<CheckoutPage order={cart} handleConfirmAndPay={handleConfirmAndPay} user={user} setUser={setUser} calculateTotal={calculateTotal} totalOrders={orders?.length||1}/>} />
             <Route path="/store/:id" element={<StoreSite stores={stores}/>} />
             <Route path="/register-store" element={<StoreRegistrationForm onRegister={handleStoreRegister} />} />
+            <Route path="/manage/:id" element={<BusinessManager user={user} stores={stores} store={storeDetails} setStore={setStoreDetails} orders={orders} products={products} />} />
         </Routes>
     </div>
   );

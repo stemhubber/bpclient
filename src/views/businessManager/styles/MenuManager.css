@@ -1,0 +1,142 @@
+.menu-manager-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.menu-manager-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-manager-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.menu-manager-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.menu-btn-primary,
+.menu-btn-secondary {
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.menu-btn-primary {
+  background-color: #2c7a4b;
+  color: #fff;
+}
+
+.menu-btn-primary:hover {
+  background-color: #256a3f;
+}
+
+.menu-btn-secondary {
+  background-color: #eee;
+  color: #444;
+}
+
+.menu-btn-secondary:hover {
+  background-color: #ddd;
+}
+
+.menu-manager-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease;
+}
+
+.menu-card-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.menu-card-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0.3rem 0;
+}
+
+.menu-card-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+.menu-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-card-price {
+  font-weight: bold;
+  color: #2c7a4b;
+}
+
+.menu-card-controls {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.menu-btn-small {
+  border: none;
+  border-radius: 4px;
+  background-color: #eee;
+  color: #333;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.menu-btn-small:hover {
+  background-color: #ddd;
+}
+
+.menu-btn-danger {
+  background-color: #ffeaea;
+  color: #cc0000;
+}
+
+.menu-btn-danger:hover {
+  background-color: #f8c5c5;
+}
+
+/* Responsive Fixes */
+@media screen and (max-width: 600px) {
+  .menu-manager-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-manager-actions {
+    margin-top: 0.5rem;
+  }
+}

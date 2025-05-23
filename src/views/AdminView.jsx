@@ -1,16 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/AdminView.css";
 import { convertIDToTime, playOrderSound } from "../utils/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { soundMap } from "../utils/Constants";
+import { Link, useParams } from "react-router-dom";
 // import VoiceOrderCommand from "./VoiceOrderCommand";
 
 
-const AdminView = ({ orders, onStatusChange }) => {
+const AdminView = ({ orders, onStatusChange, stores, onChangeStoreDetails }) => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [newStatus, setNewStatus] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const { id } = useParams();
+  const [storeDetails, setStoreDetails] = useState(null);
+
+  useEffect(()=>{
+        const store = stores?.find((s) => s.id === parseInt(id));
+        if (store) {
+            setStoreDetails(store);
+            onChangeStoreDetails(store);
+        }
+  },[id, stores]);
 
   const filtered = orders?.sort((a, b) => {
             const aTime = new Date(convertIDToTime(a.id,false)) || 0;
@@ -71,8 +82,9 @@ const AdminView = ({ orders, onStatusChange }) => {
     <div className="admin-panel">
       {/* <VoiceOrderCommand/> */}
       <h2 className="admin-title">
-        <i className="fas fa-clipboard-list"></i> Manage Orders
+        <i className="fas fa-clipboard-list"></i> {storeDetails?.name} Orders
       </h2>
+      <Link to={`/manage/${storeDetails?.id || id}`}>Settings</Link>
 
       {orders.length === 0 ? (
         <p className="no-orders">No orders yet.</p>
