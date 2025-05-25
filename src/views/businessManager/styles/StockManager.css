@@ -1,0 +1,172 @@
+.stock-manager {
+  padding: 2rem 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.stock-manager .header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stock-manager .add-btn {
+  background: #29bd00;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.stock-manager .add-btn:hover {
+  background: #219a00;
+}
+
+.stock-manager .filter-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.stock-manager .filter-row label {
+  font-weight: 500;
+  color: #444;
+}
+
+.stock-manager .filter-row select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.stock-manager .stock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.stock-manager .stock-card {
+  background: #fff;
+  border-left: 5px solid transparent;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stock-card:hover {
+  transform: scale(1.025);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.stock-card h4 {
+  margin: 0;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  color: #111;
+}
+
+.stock-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.stock-card small {
+  color: #d9534f;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.stock-manager .status-instock {
+  border-left-color: #29bd00;
+}
+
+.stock-manager .status-lowstock {
+  border-left-color: #f0a500;
+}
+
+.stock-manager .status-outofstock {
+  border-left-color: #e63946;
+}
+
+/* Modal Styling */
+.stock-manager .modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.stock-manager .modal-box {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  width: 320px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stock-manager .modal-box h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #222;
+  text-align: center;
+}
+
+.stock-manager .modal-box input {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.stock-manager .modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.stock-manager .modal-actions button {
+  flex: 1;
+  padding: 0.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.stock-manager .modal-actions button:first-child {
+  background-color: #29bd00;
+  color: white;
+}
+
+.stock-manager .modal-actions button:nth-child(2) {
+  background-color: #e63946;
+  color: white;
+}
+
+.stock-manager .modal-actions button:last-child {
+  background-color: #aaa;
+  color: white;
+}

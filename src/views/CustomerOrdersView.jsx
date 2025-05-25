@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "./styles/CustomerOrdersView.css";
 import UserOrderTracker from "./UserOrderTracker";
 import { speakText } from "../utils/utils";
+import { Link, useParams } from "react-router-dom";
 
 const CustomerOrdersView = ({ orders }) => {
 
   const [searchUser, setSearchUser] = useState(false);
+  const { id } = useParams();
   // 🧠 Group orders by their ID
   const ordersById = orders.reduce((groups, order) => {
     const id = order.id;
@@ -48,6 +50,7 @@ const CustomerOrdersView = ({ orders }) => {
         <i className="fas fa-receipt"></i> Orders
       </h2>
       <button onClick={()=> setSearchUser((prev)=> !prev)}><i className="fa fa-search"></i></button>
+      <Link to={`/menu/${id}`} className="go-back-button">Go to menu</Link>
       {!isUserAdmin && orders && <UserOrderTracker orders={Object.values(ordersById)} applysearch={searchUser}/>}
 
       <div className="orders-grid">

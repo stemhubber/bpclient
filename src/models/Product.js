@@ -5,7 +5,7 @@ export default class Product {
     this.waitingTime = waitingTime ||"11 minutes";
     this.price = price || "";
     this.img = img || "";
-    this.isAvailable = isAvailable || true; 
+    this.isAvailable = isAvailable; 
     this.description = description || "";
   }
 

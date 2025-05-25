@@ -9,6 +9,7 @@ import TeamManager from './TeamManager';
 import { useParams } from 'react-router-dom';
 import HelpManager from './HelpManager';
 import MotivationPage from './MotivationPage';
+import StockManager from './StockManager';
 
 
 const BusinessManager = ({user, store, setStoreDetails, orders, products, stores}) => {
@@ -40,11 +41,12 @@ const BusinessManager = ({user, store, setStoreDetails, orders, products, stores
 
   const TABS = {
   Menu: <MenuManager products={products} storeInfo={storeInfo}/>,
-  Business: <BusinessProfileManager />,
-  Orders: <OrderManager />,
+  Profile: <BusinessProfileManager />,
+  Orders: <OrderManager store={store} products={products}/>,
   Stats: <StatsDashboard  orders={orders}/>,
   Promos: <div>Promos coming soon</div>,
   Team: <TeamManager store={storeInfo}/>,
+  Stock: <StockManager products={products} orders={orders}/>,
   Settings: <div>Settings and integrations</div>,
   Help: <HelpManager/>,
 };

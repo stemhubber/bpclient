@@ -50,7 +50,8 @@ const ReceiptView = ({ orders, store, user, setSuccessOrder }) => {
         e.preventDefault();
         print();
       }}> Print</Link>    
-      <Link to='/orders' className='no-print'>Track</Link>
+      <Link to={`/orders/${store?.id}`} className='no-print'>Track</Link>
+      <Link to={`/menu/${store?.id}`} className='go-back-button'>Go to menu</Link>
     </div>
   );
 };

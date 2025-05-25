@@ -78,27 +78,27 @@ class StatsController {
       }, 0) / (orders.length || 1);
 
     return [
-      `🧾 Total Orders: ${totalOrders}`,
+      `Total Orders: ${totalOrders}`,
       // `💸 Total Revenue: R${totalRevenue.toFixed(2)}`,
-      `⏱️ Average Waiting Time: ${Math.round(avgWait)} minutes`,
+      `Average Waiting Time: ${Math.round(avgWait)} minutes`,
     ];
   }
 
   static getTopProductsSummary(orders, limit = 3) {
     return this.getTopProducts(orders, limit).map(
-      ({ name, count }) => `🏆 “${name}” was ordered ${count} time(s).`
+      ({ name, count }) => `${name} was ordered ${count} time(s).`
     );
   }
 
   static getRevenueSummary(orders, limit = 3) {
     return this.getRevenueByProduct(orders, limit).map(
-      ({ name, total }) => `💰 “${name}” earned R${total.toFixed(2)} in total.`
+      ({ name, total }) => `${name} earned R${total.toFixed(2)} in total.`
     );
   }
 
   static getStatusSummary(orders) {
     return this.getStatusDistribution(orders).map(
-      ({ status, count }) => `📦 ${count} order(s) are marked as "${status}".`
+      ({ status, count }) => `${count} order(s) are marked as "${status}".`
     );
   }
 

@@ -84,7 +84,7 @@ const AdminView = ({ orders, onStatusChange, stores, onChangeStoreDetails }) => 
       <h2 className="admin-title">
         <i className="fas fa-clipboard-list"></i> {storeDetails?.name} Orders
       </h2>
-      <Link to={`/manage/${storeDetails?.id || id}`}>Settings</Link>
+      <Link to={`/manage/${storeDetails?.id || id}`}>Admin mode</Link>
 
       {orders.length === 0 ? (
         <p className="no-orders">No orders yet.</p>

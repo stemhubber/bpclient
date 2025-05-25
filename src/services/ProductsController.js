@@ -30,7 +30,7 @@ const productsData = {
         "small": 75,
         "description": "Mushroom, Onion, Greenpepper, Ham, Bacon, Chorizo & Fresh Tomato",
         "image": "https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/486639079_1707564593130059_4709807558093726821_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEmx5-ZWr5CEySv0ubqSIRHIPpSaegNoqYg-lJp6A2ips1BkFiVGBjkABM9EXTP5HRm50-twbAKew0t7i4hLkSW&_nc_ohc=HXFUunedZpUQ7kNvwEkADYg&_nc_oc=AdnquXXTzEmTfM28PACYvzSkXY5gCJoIbR95CQtml4riZN7xnN54YriZuTd-k5uWTtI&_nc_zt=23&_nc_ht=scontent-cpt1-1.xx&_nc_gid=vzMKbBbIkdibgJeKkbF9Wg&oh=00_AfE7dj0L2wSPGiBVXTqqsDjwwhMJroSSE8YK6C7mUSU8Fw&oe=68164B13",
-        "isAvailable": true,
+        "isAvailable": false,
         "waitingTime": "15 minutes"
       },
       {
@@ -80,7 +80,7 @@ const productsData = {
         "small": 60,
         "description": "Onion, Greenpepper, Mince & Chillies",
         "image": "https://placehold.co/250x250?text=Mexican+Pizza",
-        "isAvailable": true,
+        "isAvailable": false,
         "waitingTime": "15 minutes"
       },
       {

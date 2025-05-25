@@ -93,7 +93,6 @@ export const playOrderSound = (action) => {
   
     const fileName = action;
     if (!fileName) return;
-console.log('Playing sound');
 
     const audio = new Audio(`/sounds/${fileName}`);
     console.log(audio);

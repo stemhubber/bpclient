@@ -48,6 +48,29 @@ hr {
 .receipt-actions{
   margin: 2rem;
 }
+
+.go-back-button {
+  position: fixed;
+  top: 2rem;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.go-back-button:hover {
+  background-color: #e0e0e0;
+  color: #000;
+  border-color: #999;
+  transform: translateY(-1px);
+}
+
 @media print {
   body * {
     visibility: hidden;

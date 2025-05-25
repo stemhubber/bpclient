@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthPage from '../auth/AuthPages';
 
 const CheckoutPage = ({ order, handleConfirmAndPay, user, setUser, calculateTotal, totalOrders }) => {
-  const [paymentMethod, setPaymentMethod] = useState('cod');
+  const [paymentMethod, setPaymentMethod] = useState('instore');
   const [note, setNote] = useState('');
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
@@ -66,6 +66,7 @@ const CheckoutPage = ({ order, handleConfirmAndPay, user, setUser, calculateTota
             value={paymentMethod}
             onChange={(e) => setPaymentMethod(e.target.value)}
           >
+            <option value="instore">In-store</option>
             <option value="cod">Cash on Delivery</option>
             <option value="online" disabled>Online Payment (Coming Soon)</option>
           </select>

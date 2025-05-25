@@ -1,0 +1,53 @@
+.order-manager {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.order-manager  .section-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.order-manager  .order-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+.order-manager  .order-card:hover {
+  background: #e9f5ff;
+  border-color: #29bd00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.order-manager .order-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-manager .order-card strong {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.order-manager .order-card span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.order-manager .order-card i {
+  font-size: 1.1rem;
+  color: #29bd00;
+}

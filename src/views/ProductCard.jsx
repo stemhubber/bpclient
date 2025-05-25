@@ -3,7 +3,7 @@ import "./styles/ProductCard.css";
 
 const ProductCard = ({ product, onSelect }) => {
   return (
-    <div className="product-card-container">
+    <div className={`product-card-container ${product?.isAvailable? '': 'not-available-card'}`}>
       <img
         src={product.img}
         alt={product.name}

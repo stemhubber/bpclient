@@ -176,7 +176,7 @@ function HomePage() {
             onChangeStoreDetails={setStoreDetails}
             />} />
             <Route path="/list" element={<StoreList stores={stores} />} />
-            <Route path="/orders" element={<CustomerOrdersView orders={orders} />} />
+            <Route path="/orders/:id" element={<CustomerOrdersView orders={orders} />} />
             <Route path="/admin/:id" element={<AdminView orders={orders} onStatusChange={handleStatusChange} stores={stores} onChangeStoreDetails={setStoreDetails}/>} />
             <Route path="/print" element={<ReceiptView orders={receiptOrders} user={user} setSuccessOrder={setSuccessOrder} store={storeDetails}/>} />
             <Route path="/stats" element={<StatsDashboard orders={orders}/>} />
