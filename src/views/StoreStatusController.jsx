@@ -121,7 +121,6 @@ const StoreStatusController = ({ store, isAdmin, isCustomerSide, showMessage, se
       <div className="store-closed-message">
         <h2>This store is currently closed 💔</h2>
         <p>They’re taking a little break. But don’t worry, your next bite of joy is on its way. Come back soon! 🍽️</p>
-        <Link to="/" className="go-back-button">Go back</Link>
       </div>
     );
   }
