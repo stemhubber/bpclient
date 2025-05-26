@@ -4,6 +4,7 @@ import { convertIDToTime, playOrderSound } from "../utils/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { soundMap } from "../utils/Constants";
 import { Link, useParams } from "react-router-dom";
+import StoreStatusController from "./StoreStatusController";
 // import VoiceOrderCommand from "./VoiceOrderCommand";
 
 
@@ -84,6 +85,7 @@ const AdminView = ({ orders, onStatusChange, stores, onChangeStoreDetails }) => 
       <h2 className="admin-title">
         <i className="fas fa-clipboard-list"></i> {storeDetails?.name} Orders
       </h2>
+      <StoreStatusController store={storeDetails} isAdmin={true} setStoreDetails={onChangeStoreDetails} orders={orders}/>
       <Link to={`/manage/${storeDetails?.id || id}`}>Admin mode</Link>
 
       {orders.length === 0 ? (

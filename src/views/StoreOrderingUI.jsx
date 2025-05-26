@@ -7,6 +7,7 @@ import ProductListView from './ProductListView';
 import CartView from './CartView';
 import './styles/StoreOrderingUI.css';
 import AuthPage from '../auth/AuthPages';
+import StoreStatusController from './StoreStatusController';
 
 const StoreOrderingUI = ({
   loading,
@@ -45,6 +46,9 @@ const StoreOrderingUI = ({
         <h1>{storeDetails?.name}</h1>
         <p>{storeDetails?.contacts}</p>
       </header>
+
+      <StoreStatusController store={storeDetails} isCustomerSide={true} showMessage={true} setStoreDetails={onChangeStoreDetails} orders={[]}/>
+
 
       {/* Navbar */}
       <nav className="navbar">

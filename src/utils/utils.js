@@ -95,7 +95,6 @@ export const playOrderSound = (action) => {
     if (!fileName) return;
 
     const audio = new Audio(`/sounds/${fileName}`);
-    console.log(audio);
     
     audio.volume = 0.6; // optional: set volume
     audio.play().catch((err) => {

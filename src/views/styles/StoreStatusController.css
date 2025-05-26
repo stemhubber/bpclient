@@ -1,0 +1,117 @@
+/* Admin Buttons */
+.close-store-button,
+.reopen-store-button {
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+.close-store-button {
+  background-color: #e63946;
+  color: white;
+}
+
+.close-store-button:hover {
+  background-color: #c92e3b;
+}
+
+.reopen-store-button {
+  background-color: #29bd00;
+  color: white;
+}
+
+.reopen-store-button:hover {
+  background-color: #219a00;
+}
+
+/* Modal */
+.store-admin-controls .modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.store-admin-controls .modal-box {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  width: 320px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.store-admin-controls .modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.store-admin-controls .modal-actions button {
+  flex: 1;
+  padding: 0.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.store-admin-controls .modal-actions button:first-child {
+  background-color: #29bd00;
+  color: white;
+}
+
+.store-admin-controls .modal-actions button:last-child {
+  background-color: #aaa;
+  color: white;
+}
+
+/* Customer Closed Message */
+.store-closed-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #555;
+  background: #fff6f6;
+  border: 2px dashed #e63946;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 3rem auto;
+}
+
+.store-closed-message h2 {
+  color: #e63946;
+}
+
+.store-closed-message p {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.store-status-message {
+  background: #eafbee;
+  border: 1px solid #b7f0ca;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  color: #217a3a;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
