@@ -105,7 +105,7 @@ const AuthPage = ({ onUserLoggedIn, dontNavigate=false}) => {
 
       sessionStorage.setItem('bitepilot_user', JSON.stringify(userData));
       onUserLoggedIn(userData);
-      navigate("/");
+      if(!dontNavigate) navigate("/");
     } catch (err) {
       setStatus('❌ ' + err.message);
     } finally {

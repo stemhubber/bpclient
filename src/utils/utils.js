@@ -150,3 +150,10 @@ export const listenForSpeechCommand = ({ onResult, onError, lang = 'en-US' }) =>
     recognition.start();
   };
 
+  export const generateWhatsAppLink = (phone, message) => {
+  if (!phone || !message) return null;
+
+  const encodedMessage = encodeURIComponent(message.trim());
+  return `https://wa.me/${phone}?text=${encodedMessage}`;
+};
+

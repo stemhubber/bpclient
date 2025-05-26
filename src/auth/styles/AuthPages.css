@@ -8,9 +8,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* On top of other content */
+  z-index: 1000;
   font-family: 'Segoe UI', sans-serif;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .auth-box {
@@ -23,11 +24,11 @@
   animation: slideUp 0.4s ease;
   z-index: 1001;
   position: relative;
+  box-sizing: border-box;
 }
 
-/* The rest of your styles remain mostly unchanged: */
 .auth-title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   margin-bottom: 1.5rem;
   color: #2d2d2d;
   text-align: center;
@@ -45,6 +46,8 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .auth-input:focus {
@@ -80,6 +83,7 @@
   text-align: center;
 }
 
+/* Entrance animation */
 @keyframes slideUp {
   from {
     transform: translateY(30px);
@@ -88,5 +92,23 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* 🔁 Extra mobile optimization */
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .auth-title {
+    font-size: 1.5rem;
+  }
+
+  .auth-input,
+  .auth-button {
+    font-size: 0.95rem;
+    padding: 0.8rem;
   }
 }

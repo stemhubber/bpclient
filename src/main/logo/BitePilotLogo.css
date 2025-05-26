@@ -1,101 +1,120 @@
 .bitepilot-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: radial-gradient(circle, #ffffff, #e8f5e9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    overflow: hidden;
-    transition: all 1s ease-in-out;
-    transform-origin: top left;
-    padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle, #ffffff, #e8f5e9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  transform-origin: top left;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.logo-wrapper {
+  transition: all 1s ease-in-out;
+  transform-origin: center;
+  border-radius: 20px;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  max-width: 90vw;
+}
+
+.logo {
+  width: 200px;
+  max-width: 70vw;
+  height: auto;
+  transition: all 1s ease-in-out;
+}
+
+.tagline {
+  margin-top: 1.5rem;
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  font-weight: 600;
+  color: #333;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-in-out;
+  text-align: center;
+  max-width: 90vw;
+}
+
+/* Entrance Phase */
+.bitepilot-container.entering .tagline {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.bitepilot-container.visible .tagline {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bitepilot-container.visible .logo-wrapper {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Shrink and Move */
+.bitepilot-container.shrinking {
+  height: 80px;
+  width: 200px;
+  padding: 0;
+  background: transparent;
+  justify-content: flex-start;
+  align-items: flex-start;
+  top: 0;
+  left: 0;
+  transform: scale(0.6) translate(20px, 20px);
+}
+
+.bitepilot-container.shrinking .logo-wrapper {
+  padding: 0.3rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: none;
+  background: none;
+  animation: none;
+}
+
+.bitepilot-container.shrinking .logo {
+  width: 100%;
+}
+
+.bitepilot-container.shrinking .tagline {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
   }
-  
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
   .logo-wrapper {
-    transition: all 1s ease-in-out;
-    transform-origin: center;
-    border-radius: 20px;
-    background: white;
-    padding: 2rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
   }
-  
+
   .logo {
-    width: 200px;
-    height: auto;
-    transition: all 1s ease-in-out;
+    width: 140px;
   }
-  
+
   .tagline {
-    margin-top: 1.5rem;
-    font-size: 2rem;
-    font-weight: 600;
-    color: #333;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease-in-out;
+    font-size: 1.2rem;
   }
-  
-  /* Entrance Phase */
-  .bitepilot-container.entering .tagline {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  
-  .bitepilot-container.visible .tagline {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .bitepilot-container.visible .logo-wrapper {
-    animation: float 4s ease-in-out infinite;
-  }
-  
-  /* Shrink and Move */
-  .bitepilot-container.shrinking {
-    height: 80px;
-    width: 200px;
-    padding: 0;
-    background: transparent;
-    justify-content: flex-start;
-    align-items: flex-start;
-    top: 0;
-    left: 0;
-    transform: scale(0.6) translate(20px, 20px);
-  }
-  
-  .bitepilot-container.shrinking .logo-wrapper {
-    padding: 0.3rem;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    box-shadow: none;
-    background: none;
-    animation: none;
-  }
-  
-  .bitepilot-container.shrinking .logo {
-    width: 100%;
-  }
-  
-  .bitepilot-container.shrinking .tagline {
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
-  }
-  
-  /* Float animation */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
+}

@@ -6,7 +6,7 @@ import { formatTimestamp } from "../utils/utils";
 const ordersCollection = collection(db, "orders");
 
 class OrderService {
-
+  static globalOrderNumber = 1;
   static listenToOrders(callback) {
     try {
       return onSnapshot(ordersCollection, (snapshot) => {
@@ -14,6 +14,7 @@ class OrderService {
           ...doc.data(),
           firestoreId: doc.id
         }));
+        this.globalOrderNumber = orders?.length || 1;
         callback(orders);
       });
     } catch (error) {
@@ -36,7 +37,8 @@ class OrderService {
     const createdOrders = [];
 
     try {
-      const orderNum = Date.now().toString()+"-"+payload.orderNum;
+        this.globalOrderNumber = this.globalOrderNumber + Math.floor(Math.random()*3);
+      const orderNum = Date.now().toString()+"-"+this.globalOrderNumber;
       for (const product of cartProducts) {
         const newOrder = new Order(orderNum, product.toJSON(), null,null,payload.user); // using timestamp for id
         await this.saveOrder(newOrder);

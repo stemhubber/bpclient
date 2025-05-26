@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles/AdminView.css";
-import { convertIDToTime, playOrderSound } from "../utils/utils";
+import { convertIDToTime, generateWhatsAppLink, playOrderSound } from "../utils/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { soundMap } from "../utils/Constants";
 import { Link, useParams } from "react-router-dom";
@@ -109,7 +109,20 @@ const AdminView = ({ orders, onStatusChange, stores, onChangeStoreDetails }) => 
 
                     <div className={`cart-item-header ${order.id === selectedOrder? 'selected-admin-order':''}`}>
                       <h4>Order #{order.id}</h4>
-                      <p>{`${order?.user?.name} - ${order?.user?.uid}`}</p>
+                      <p>{order?.user?.name}{" "}
+                          <a
+                            href={generateWhatsAppLink(
+                              order?.user?.uid, // Replace with phone number if this is UID by mistake
+                              `Hi ${order?.user?.name},\n\nOrder ${order?.id} is ${order?.status}.\n\nYou ordered:\n${order?.products
+                                ?.map((product, index) => `${index + 1}. ${product.name}`)
+                                .join(", \n")}\n\n- ${storeDetails?.name} and BitePilot`
+                            )}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {order?.user?.uid}
+                          </a>
+                          </p>
                       <p>{`${order?.timestamp}`}</p>
                     </div>
                     <div className="cart-item-body">
