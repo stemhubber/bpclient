@@ -57,9 +57,17 @@ class UserController {
   }
 
   async getUser(userId) {
+    if(!userId) return null;
     const userRef = doc(db, 'users', userId);
     const snapshot = await getDoc(userRef);
     return snapshot.exists() ? snapshot.data() : null;
+  }
+  async getUserName(userId) {
+    if(!userId) return null;
+    const userRef = doc(db, 'users', userId);
+    const snapshot = await getDoc(userRef);
+    const data = snapshot.exists() ? snapshot.data() : null;
+    return data?.name;
   }
 }
 

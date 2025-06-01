@@ -20,9 +20,11 @@ import StoreOrderingUI from "../views/StoreOrderingUI";
 import { playOrderSound } from "../utils/utils";
 import { soundMap } from "../utils/Constants";
 import BusinessManager from "../views/businessManager/BusinessManager";
+import OfflineIndicator from "./OfflineIndicator";
 
 function HomePage() {
-  const productController = new ProductController();
+  const storeLoaderId = 1;
+  const productController = new ProductController(storeLoaderId);
   const [products] = useState(productController.getAll());
   const [productsExtra] = useState(productController.getExtraPackages());
   const [orders, setOrders] = useState([]);
@@ -44,7 +46,9 @@ function HomePage() {
     // Start listening to orders in real-time
     const unsubscribe = OrderService.listenToOrders((liveOrders) => {
       if (liveOrders) {
-        setOrders(liveOrders);
+        const storeOrders = liveOrders.filter((order)=> order.storeId == storeDetails.id);
+
+        if (storeOrders) setOrders(storeOrders);
         playOrderSound(soundMap.new_orders);
       }
       setLoading(false); // stop spinner once first live data is in
@@ -54,7 +58,7 @@ function HomePage() {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [storeDetails]);
   
   useEffect(() => {
     const existingUser = sessionStorage.getItem('bitepilot_user');
@@ -95,7 +99,7 @@ function HomePage() {
 
     try {
       const created_orders = await OrderService.createOrders(cart,payload);
-      playOrderSound(soundMap.created);
+      playOrderSound(soundMap.button_click);
       setReceiptOrders(created_orders);
       setCart([]);
       setShowCart(false);
@@ -146,6 +150,7 @@ function HomePage() {
     <div className="home-page">
       
       {user && <UserDetailsPage userData={user}/>}
+      <OfflineIndicator/>
 
       {/* <AdminView orders={orders} onStatusChange={handleStatusChange} />
       <CustomerOrdersView orders={orders} /> */}
@@ -182,7 +187,7 @@ function HomePage() {
             <Route path="/stats" element={<StatsDashboard orders={orders}/>} />
             <Route path="/login" element={<AuthPage user={user} onUserLoggedIn={setUser}/>} />
             <Route path="/about" element={<AboutPage/>} />
-            <Route path="/checkout" element={<CheckoutPage order={cart} handleConfirmAndPay={handleConfirmAndPay} user={user} setUser={setUser} calculateTotal={calculateTotal} totalOrders={orders?.length||1}/>} />
+            <Route path="/checkout/:id" element={<CheckoutPage storeId={storeDetails} order={cart} handleConfirmAndPay={handleConfirmAndPay} user={user} setUser={setUser} calculateTotal={calculateTotal} totalOrders={orders?.length||1}/>} />
             <Route path="/store/:id" element={<StoreSite stores={stores}/>} />
             <Route path="/register-store" element={<StoreRegistrationForm onRegister={handleStoreRegister} />} />
             <Route path="/manage/:id" element={<BusinessManager user={user} stores={stores} store={storeDetails} setStore={setStoreDetails} orders={orders} products={products} />} />

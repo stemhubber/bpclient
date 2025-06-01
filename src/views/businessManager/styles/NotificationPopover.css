@@ -1,0 +1,246 @@
+/* AdminAlertManager.css (includes Notification styles) */
+
+/* Notification Wrapper */
+.notification-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-bell-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-bell {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -6px;
+  right: -12px;
+  background: red;
+  color: white;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+}
+
+.text-success{
+    color: #28a745;
+}
+.text-info{
+    color: #28a7a7;
+}
+.text-warning{
+    color: #d29b71;
+}
+
+/* Customer Closed Message */
+.store-closed-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #555;
+  background: #fff6f6;
+  border: 2px dashed #e63946;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 3rem auto;
+}
+
+.store-closed-message h2 {
+  color: #e63946;
+}
+
+.store-closed-message p {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.store-status-message {
+  background: #eafbee;
+  border: 1px solid #b7f0ca;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  color: #217a3a;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Popover Backdrop & Modal */
+.popover-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.popover-modal {
+  background-color: #fff;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 1rem 1.5rem;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1rem;
+}
+
+.popover-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.popover-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+.popover-close:hover {
+  color: #333;
+}
+
+.popover-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notification-alert {
+  background: #f8f9fa;
+  border-left: 4px solid #28a745;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+}
+
+.alert-type {
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: #28a745;
+}
+
+.alert-timestamp {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .popover-modal {
+    max-width: 90%;
+    margin-top: 10rem;
+    max-height: 90vh;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .popover-header h2 {
+    font-size: 1rem;
+  }
+
+  .popover-close {
+    font-size: 1.2rem;
+  }
+
+  .notification-bell {
+    font-size: 1.3rem;
+  }
+
+  .notification-badge {
+    font-size: 0.6rem;
+    padding: 2px 5px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.alert-replies {
+  margin-top: 1rem;
+  border-top: 1px solid #eaeaea;
+  padding-top: 0.5rem;
+}
+
+.alert-replies summary {
+  cursor: pointer;
+  color: blue;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reply-list {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reply-item {
+  background: #f1f1f1;
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.reply-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: #2c3e50;
+}
+
+.reply-user {
+  font-size: 0.85rem;
+}
+
+.reply-message {
+  margin-bottom: 0.25rem;
+}
+
+.reply-timestamp {
+  font-size: 0.75rem;
+  color: #777;
+}

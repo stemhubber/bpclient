@@ -31,7 +31,7 @@ const PrintModal = ({ isOpen, onClose, storeInfo, menuItems }) => {
                 td {
                     width: 50%;
                     vertical-align: top;
-                    padding: 1rem;
+                    padding: 0.8rem;
                     border: 1px solid #ccc;
                 }
                 .item-name {
@@ -50,13 +50,24 @@ const PrintModal = ({ isOpen, onClose, storeInfo, menuItems }) => {
                 }
                 .qr-code {
                     text-align: center;
-                    margin-top: 2rem;
+                    margin-top: 0.2rem;
+                }
+                @media print {
+                  .print-btn{
+                    visibility: hidden;
+                  }
                 }
                 </style>
             </head>
             <body>
+                
+            <div class="qr-code">
+                <p>Scan to view online</p>
+                <img src="${qrCodeURL}" alt="QR Code" />
+                </div>
                 <h1>${storeInfo?.name || 'My Store'} - Menu</h1>
                 <button class="print-btn" onclick="window.print()">🖨 Print Now</button>
+                
                 <table>
                 ${menuItems.reduce((html, item, idx) => {
                     if (idx % 2 === 0) html += '<tr>';
@@ -73,11 +84,6 @@ const PrintModal = ({ isOpen, onClose, storeInfo, menuItems }) => {
                     return html;
                 }, '')}
                 </table>
-
-                <div class="qr-code">
-                <p>Scan to view online</p>
-                <img src="${qrCodeURL}" alt="QR Code" />
-                </div>
             </body>
             </html>
         `;

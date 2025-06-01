@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import './styles/StoreStatusController.css';
-import { playOrderSound, speakText } from '../utils/utils';
+import { playOrderSound } from '../utils/utils';
 import { soundMap } from '../utils/Constants';
 
 const StoreStatusController = ({ store, isAdmin, isCustomerSide, showMessage, setStoreDetails, orders }) => {
@@ -111,16 +110,6 @@ const StoreStatusController = ({ store, isAdmin, isCustomerSide, showMessage, se
             </div>
           </div>
         )}
-      </div>
-    );
-  }
-
-  // 2. CUSTOMER SIDE
-  if (isCustomerSide && !storeOpen && showMessage) {
-    return (
-      <div className="store-closed-message">
-        <h2>This store is currently closed 💔</h2>
-        <p>They’re taking a little break. But don’t worry, your next bite of joy is on its way. Come back soon! 🍽️</p>
       </div>
     );
   }

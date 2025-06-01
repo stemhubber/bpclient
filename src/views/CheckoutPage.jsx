@@ -1,15 +1,16 @@
 // CheckoutPage.js
 import React, { useState } from 'react';
 import './styles/CheckoutPage.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import AuthPage from '../auth/AuthPages';
 
-const CheckoutPage = ({ order, handleConfirmAndPay, user, setUser, calculateTotal, totalOrders }) => {
+const CheckoutPage = ({ order, handleConfirmAndPay, user, setUser, calculateTotal, totalOrders, store }) => {
   const [paymentMethod, setPaymentMethod] = useState('instore');
   const [note, setNote] = useState('');
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const handleCheckout = async () => {
     setLoading(true);
@@ -25,6 +26,7 @@ const CheckoutPage = ({ order, handleConfirmAndPay, user, setUser, calculateTota
         user: {uid: user.uid, name: user.name},
         total: calculateTotal(order),
         orderNum: (totalOrders+1),
+        storeId: store?.id || id,
       };
 
       await handleConfirmAndPay(payload);

@@ -2,11 +2,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./styles/StoreSite.css";
 import GallerySection from "./GallerySection";
+import StatsController from "../services/StatsController";
 
 const StoreSite = ({ stores }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const store = stores?.find((s) => s.id === parseInt(id));
+  StatsController.updateVisit(store.id);
 
   if (!store) return <p className="store-site-error">Store not found.</p>;
 

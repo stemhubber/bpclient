@@ -29,7 +29,7 @@ const dummyStores = [
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTQoxPEGXSmLueGMU8zycMe893KhCDW8GBHQ&s",
         },
       ],
-      isOpen: false
+      isOpen: true
     },
     {
       id: 2,

@@ -15,14 +15,14 @@ const ProductListView = ({ products, onSelect, productsExtra, orders, setShowCar
       <hr></hr>
       <h2 id="pizza-menu">Pizza</h2>
     <div className="product-list-grid">
-    {products.map((product, index) => (
+    {products?.map((product, index) => (
         <ProductCard key={index} product={product} onSelect={onSelect} />
       ))}
     </div>
       
       <h2 id="meal-menu">Extra Meals</h2>
       <div className="product-list-grid">
-      {productsExtra.map((product, index) => (
+      {productsExtra?.map((product, index) => (
         <ProductCard key={index} product={product} onSelect={onSelect} />
       ))}
       </div>

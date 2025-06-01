@@ -1,0 +1,68 @@
+/* StatsDashboard.css */
+
+.adv-stats-dashboard {
+  padding: 2rem;
+  background: linear-gradient(145deg, #f9f9f9, #e6e6e6);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.adv-stats-dashboard .stats-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.adv-stats-dashboard .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.adv-stats-dashboard .stat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.adv-stats-dashboard .stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.adv-stats-dashboard .stat-icon {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 0.75rem;
+}
+
+.adv-stats-dashboard .stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: #222;
+}
+
+.adv-stats-dashboard .stat-label {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .adv-stats-dashboard {
+    padding: 1rem;
+  }
+  .adv-stats-dashboard .stats-title {
+    font-size: 1.4rem;
+  }
+  .adv-stats-dashboard .stat-value {
+    font-size: 1.5rem;
+  }
+}

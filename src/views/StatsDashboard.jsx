@@ -2,8 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import StatsController from "../services/StatsController";
 import "./styles/StatsDashboard.css";
+import AdvStatsDashboard from "./AdvStatsDashboard";
 
-const StatsDashboard = ({ orders }) => {
+const StatsDashboard = ({ orders, store }) => {
   const summaryText = StatsController.getSummaryText(orders);
   const topProducts = StatsController.getTopProductsSummary(orders);
   const status = StatsController.getStatusSummary(orders);
@@ -43,6 +44,8 @@ const StatsDashboard = ({ orders }) => {
       }}
     >
       <h2><i className="fa fa-line-chart"></i> Business Stats</h2>
+
+      <AdvStatsDashboard store={store}/>
 
       <div className="summary-grid">
         <Section title="Quick Summary" icon="fa-info-circle" items={summaryText} />

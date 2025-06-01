@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/Sidebar.css'; // 👈 Import CSS
 
 const tabs = [
+  { label: 'Alerts', icon: 'fa-bell' },
   { label: 'Menu', icon: 'fa-utensils' },
   { label: 'Profile', icon: 'fa-store' },
   { label: 'Orders', icon: 'fa-receipt' },

@@ -15,6 +15,8 @@ class OrderService {
           firestoreId: doc.id
         }));
         this.globalOrderNumber = orders?.length || 1;
+        console.log('Live backend ', orders.length);
+        
         callback(orders);
       });
     } catch (error) {
@@ -40,7 +42,7 @@ class OrderService {
         this.globalOrderNumber = this.globalOrderNumber + Math.floor(Math.random()*3);
       const orderNum = Date.now().toString()+"-"+this.globalOrderNumber;
       for (const product of cartProducts) {
-        const newOrder = new Order(orderNum, product.toJSON(), null,null,payload.user); // using timestamp for id
+        const newOrder = new Order(orderNum, product.toJSON(), null,null,payload.user, payload.storeId); // using timestamp for id
         await this.saveOrder(newOrder);
         createdOrders.push(newOrder);
       }

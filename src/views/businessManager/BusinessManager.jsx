@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom';
 import HelpManager from './HelpManager';
 import MotivationPage from './MotivationPage';
 import StockManager from './StockManager';
+import AdminAlertManager from './AdminAlertManager';
 
 
 const BusinessManager = ({user, store, setStoreDetails, orders, products, stores}) => {
@@ -40,10 +41,11 @@ const BusinessManager = ({user, store, setStoreDetails, orders, products, stores
   const userx = sessionStorage.getItem('bitepilot_user');
 
   const TABS = {
+  Alerts: <AdminAlertManager storeId={storeInfo}/>,
   Menu: <MenuManager products={products} storeInfo={storeInfo}/>,
-  Profile: <BusinessProfileManager />,
-  Orders: <OrderManager store={store} products={products}/>,
-  Stats: <StatsDashboard  orders={orders}/>,
+  Profile: <BusinessProfileManager storeInfo={storeInfo}/>,
+  Orders: <OrderManager store={storeInfo} products={products}/>,
+  Stats: <StatsDashboard  orders={orders} store={storeInfo}/>,
   Promos: <div>Promos coming soon</div>,
   Team: <TeamManager store={storeInfo}/>,
   Stock: <StockManager products={products} orders={orders}/>,

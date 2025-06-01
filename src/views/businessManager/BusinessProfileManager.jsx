@@ -2,15 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './styles/BusinessProfileManager.css';
 
-const BusinessProfileManager = () => {
-  const [formData, setFormData] = useState({
-    name: 'Nandi Kitchen',
-    logo: 'https://placehold.co/100x100?text=Logo',
-    wallpaper: 'https://placehold.co/600x200?text=Wallpaper',
-    contact: '+27 82 123 4567',
-    location: 'Khayelitsha, Cape Town',
-    about: 'Fresh food. Great service. Local flavour.',
-  });
+const BusinessProfileManager = ({storeInfo}) => {
+  const [formData, setFormData] = useState(storeInfo);
 
   const handleChange = e => {
     const { name, value } = e.target;

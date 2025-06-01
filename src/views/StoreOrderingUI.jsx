@@ -1,5 +1,5 @@
 // StoreOrderingUI.jsx
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import BitePilotLogo from '../main/logo/BitePilotLogo'; // Make sure this exists
 import ReceiptView from './ReceiptView';
@@ -7,7 +7,8 @@ import ProductListView from './ProductListView';
 import CartView from './CartView';
 import './styles/StoreOrderingUI.css';
 import AuthPage from '../auth/AuthPages';
-import StoreStatusController from './StoreStatusController';
+import NotificationPopover from './businessManager/NotificationPopover';
+import StatsController from '../services/StatsController';
 
 const StoreOrderingUI = ({
   loading,
@@ -37,6 +38,7 @@ const StoreOrderingUI = ({
         if (store) {
             setStoreDetails(store);
             onChangeStoreDetails(store);
+            StatsController.updateVisit(store?.id, user?.id);
         }
     },[id, stores]);
   return (
@@ -47,13 +49,11 @@ const StoreOrderingUI = ({
         <p>{storeDetails?.contacts}</p>
       </header>
 
-      <StoreStatusController store={storeDetails} isCustomerSide={true} showMessage={true} setStoreDetails={onChangeStoreDetails} orders={[]}/>
-
-
       {/* Navbar */}
       <nav className="navbar">
         <Link to={`/orders/${storeDetails?.id}`}>My Orders</Link>
         <Link to={`/admin/${storeDetails?.id}`}>Admin Panel</Link>
+        <NotificationPopover store={storeDetails} storeId={storeDetails?.id}/>
       </nav>
       {!user && <AuthPage onUserLoggedIn={setUser} dontNavigate={true}/>}
 
