@@ -18,6 +18,8 @@ const StoreOrderingUI = ({
   receiptOrders,
   products,
   productsExtra,
+  setProducts,
+  setProductsExtra,
   cart,
   showCart,
   setShowCart,
@@ -106,6 +108,8 @@ const StoreOrderingUI = ({
         orders={cart}
         setShowCart={setShowCart}
         onSelect={handleAddToCart}
+        setProducts={setProducts}
+        setProductsExtra={setProductsExtra}
       />
 
       {/* Cart */}

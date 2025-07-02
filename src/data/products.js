@@ -379,7 +379,7 @@ export const productsData = {
         name: "Tower kota with bacon",
         price: 55,
         description: "Tower kota filled with bacon and toppings",
-        image: "https://placehold.co/250x250?text=Tower+Bacon+Kota",
+        image: "https://eskort.com/wp-content/uploads/2023/12/eskort_jan_and_feb-50-1024x827.jpg",
         isAvailable: true,
         waitingTime: "15 minutes"
       },
@@ -406,7 +406,7 @@ export const productsData = {
         name: "Gwinya burger",
         price: 20,
         description: "Classic Gwinya burger",
-        image: "https://placehold.co/250x250?text=Gwinya+Burger",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-bWVrG7PE8YWnScLpq-e6Eq_-HcxpElACyw&s",
         isAvailable: true,
         waitingTime: "15 minutes"
       },
@@ -424,7 +424,7 @@ export const productsData = {
         name: "Gwinya with mince",
         price: 12,
         description: "Gwinya filled with savoury mince",
-        image: "https://placehold.co/250x250?text=Gwinya+Mince",
+        image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3KEOtxgNeds_KPwXxBb9r9RYXpGSWKrIsxtK40ykbZ1Vp5L9VDpQ1mnusU74VWYuAerc9jD79Mx6etPKJiaU7V3tKTWAQSkbEXMibPiWI0QJFrBlBh-6cfj-AjmD-i0yCaXN2gcrN47k/s1600/IMG_35051.jpg",
         isAvailable: true,
         waitingTime: "15 minutes"
       },
@@ -469,7 +469,7 @@ export const productsData = {
         name: "BEE quarter chicken with chips",
         price: 55,
         description: "Flame-grilled quarter chicken with crispy chips",
-        image: "https://placehold.co/250x250?text=BEE+Quarter+Chicken",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFfBRGRW70nrfkLOaBqzGI4FeuqBX16unJib1365HZyLE8Hqxv5rmeXmLSRZEh83ZHITI&usqp=CAU",
         isAvailable: true,
         waitingTime: "15 minutes"
       },
@@ -505,7 +505,7 @@ export const productsData = {
         name: "3 Wings with chips",
         price: 50,
         description: "3 juicy wings served with crispy chips",
-        image: "https://placehold.co/250x250?text=3+Wings+&+Chips",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwZApie0UXuGNvyBxPUcVZy-Nci0i-UBZVw&s",
         isAvailable: true,
         waitingTime: "15 minutes"
       },
@@ -514,7 +514,7 @@ export const productsData = {
         name: "4 Wings with chips",
         price: 65,
         description: "4 juicy wings served with crispy chips",
-        image: "https://placehold.co/250x250?text=4+Wings+&+Chips",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwZApie0UXuGNvyBxPUcVZy-Nci0i-UBZVw&s",
         isAvailable: true,
         waitingTime: "15 minutes"
       },
@@ -523,7 +523,7 @@ export const productsData = {
         name: "6 Wings with chips",
         price: 95,
         description: "6 juicy wings served with crispy chips",
-        image: "https://placehold.co/250x250?text=6+Wings+&+Chips",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwZApie0UXuGNvyBxPUcVZy-Nci0i-UBZVw&s",
         isAvailable: true,
         waitingTime: "15 minutes"
       },

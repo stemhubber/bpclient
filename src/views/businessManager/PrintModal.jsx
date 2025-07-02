@@ -109,6 +109,11 @@ const PrintModal = ({ isOpen, onClose, storeInfo, menuItems }) => {
                     text-align: center;
                     margin-top: 2rem;
                 }
+                    @media print {
+                  .print-btn{
+                    visibility: hidden;
+                  }
+                }
           </style>
         </head>
         <body>
@@ -117,7 +122,8 @@ const PrintModal = ({ isOpen, onClose, storeInfo, menuItems }) => {
             <h1>${storeInfo?.name || 'My Store'}</h1>
             <button class="print-btn" onclick="window.print()">🖨 Print Now</button>
             <img class="wallpaper" src="${storeInfo?.wallpaper}" alt="Wallpaper" />
-            <p><strong>Contact:</strong> ${storeInfo?.contact || 'N/A'}</p>
+            <p><br><hr>${storeInfo?.description || 'N/A'}<br><hr></p>
+            <p><strong>Contact:</strong> ${storeInfo?.contacts || 'N/A'}</p>
             <p><strong>Location:</strong> ${storeInfo?.location || 'Not Set'}</p>
             <div class="qr-code">
                 <p>Scan to view online</p>

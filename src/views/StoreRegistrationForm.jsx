@@ -66,6 +66,12 @@ const StoreRegistrationForm = ({ onRegister }) => {
       {!submittedStore ? (
         <>
           <h2>Register Your Store</h2>
+          <p>
+            Get assisted: 
+            <a href="https://wa.me/27735534588" target="_blank" rel="noopener noreferrer">
+              +27735534588
+            </a>
+          </p>
           <form className="store-form" onSubmit={handleSubmit}>
             <input name="name" value={form.name} onChange={handleChange} placeholder="Store Name" required />
             <input name="logo" value={form.logo} onChange={handleChange} placeholder="Logo URL" />

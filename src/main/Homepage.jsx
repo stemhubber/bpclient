@@ -25,8 +25,8 @@ import OfflineIndicator from "./OfflineIndicator";
 function HomePage() {
   const storeLoaderId = 1;
   const productController = new ProductController(storeLoaderId);
-  const [products] = useState(productController.getAll());
-  const [productsExtra] = useState(productController.getExtraPackages());
+  const [products, setProducts] = useState(productController.getAll());
+  const [productsExtra, setProductsExtra] = useState(productController.getExtraPackages());
   const [orders, setOrders] = useState([]);
   const [receiptOrders, setReceiptOrders] = useState([]);
   const [cart, setCart] = useState([]);
@@ -169,6 +169,8 @@ function HomePage() {
             setUser={setUser}
             products={products}
             productsExtra={productsExtra}
+            setProducts={setProducts}
+            setProductsExtra={setProductsExtra}
             cart={cart}
             showCart={showCart}
             setShowCart={setShowCart}

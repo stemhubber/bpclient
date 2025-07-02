@@ -182,8 +182,10 @@ class StatsController {
   static userVisit(storeId) {
     const userId = sessionStorage.getItem('bitepilot_user');
     const storedVisit = sessionStorage.getItem('bitepilot_user_page_visit');
-
-    const previouslyVisited = storedVisit && JSON.parse(storedVisit) === storeId;
+    if (!storeId || !userId || !storedVisit || storedVisit === undefined) {
+      return { user_visited: false, userId: userId || 'anonymous' };
+    }
+    const previouslyVisited = storedVisit? JSON.parse(storedVisit) === storeId : false;
 
     if (previouslyVisited) {
       return { user_visited: true };

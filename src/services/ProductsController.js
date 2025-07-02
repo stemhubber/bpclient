@@ -5,7 +5,7 @@ import { productsData, morneProducts } from '../data/products';
   export default class ProductController {
     constructor(storeId) {
 
-      if (storeId === 2){
+      if (parseInt(storeId) === 4){
         this.products = morneProducts.map((pd)=> new Product(pd.id, pd.name, pd.waitingTime, pd.price, pd.image, pd.isAvailable, pd.description));
         return;
       }
@@ -33,7 +33,7 @@ import { productsData, morneProducts } from '../data/products';
     }
   
     // Read all products
-    getAll() {
+    getAll(id) {
       return this.products.sort((a, b) => a.name.localeCompare(b.name));
     }
   

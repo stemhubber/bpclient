@@ -26,6 +26,7 @@ const AdminAlertManager = ({ storeId }) => {
       setMessage('');
     } catch (err) {
       setError("Failed to send alert. Please try again.");
+      console.error("Failed to send alert. Please try again.", err)
     } finally {
       setLoading(false);
     }

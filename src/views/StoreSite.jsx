@@ -7,8 +7,8 @@ import StatsController from "../services/StatsController";
 const StoreSite = ({ stores }) => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const store = stores?.find((s) => s.id === parseInt(id));
-  StatsController.updateVisit(store.id);
+  const store = stores?.find((s) => s?.id === parseInt(id));
+  if (store?.id) StatsController.updateVisit(store?.id);
 
   if (!store) return <p className="store-site-error">Store not found.</p>;
 
@@ -105,29 +105,52 @@ const StoreSite = ({ stores }) => {
 
         
         <motion.div
-          className="store-site-visit-btn-wrap"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <h3>Map</h3>
-        </motion.div>
-        <motion.div
-          className="store-site-map"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          <iframe
-            title="store-location"
-            width="100%"
-            height="250"
-            frameBorder="0"
-            style={{ border: 0 }}
-            src={`https://www.google.com/maps?q=${store.coordinates.lat},${store.coordinates.lng}&z=15&output=embed`}
-            allowFullScreen
-          ></iframe>
-        </motion.div>
+  className="store-site-visit-btn-wrap"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.5 }}
+>
+    <h3>Map & Street View</h3>
+    </motion.div>
+
+    <div className="store-site-map-grid" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      {/* Map View */}
+      <motion.div
+        className="store-map-view"
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.7 }}
+      >
+        <iframe
+          title="Map View"
+          width="100%"
+          height="250"
+          frameBorder="0"
+          style={{ border: 0 }}
+          src={`https://www.google.com/maps?q=${store.coordinates.lat},${store.coordinates.lng}&z=15&output=embed`}
+          allowFullScreen
+        ></iframe>
+      </motion.div>
+
+      {/* Street View */}
+      <motion.div
+        className="store-street-view"
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.9 }}
+      >
+        <iframe
+          title="Street View"
+          width="100%"
+          height="250"
+          frameBorder="0"
+          style={{ border: 0 }}
+          src={`https://www.google.com/maps?q=&layer=c&cbll=${store.coordinates.lat},${store.coordinates.lng}&cbp=11,0,0,0,0&output=svembed`}
+          allowFullScreen
+        ></iframe>
+      </motion.div>
+    </div>
+
 
         
       </div>
