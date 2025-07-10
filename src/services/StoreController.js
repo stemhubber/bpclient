@@ -36,7 +36,7 @@ const dummyStores = [
       name: "Mornee Grills & Bar",
       logo: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2Fmornee-logo.png?alt=media&token=8877ecc2-b5ca-4213-a3f0-4ef3f5eb066c",
       wallpaper: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2Fmornee-wallpaper.png?alt=media&token=d0fb1688-ba5b-472e-bcd0-1687b6c36c77",
-      location: "19 Thole Street, Ngangelizwe, Mthatha, 5099",
+      location: "19 Thole Street, Ngangelizwe, Mthatha",
       contacts: "+27604317270",
       coordinates: { lat: -31.606686, lng: 28.810295 }, 
       openingTimes: "Mon-Sun 10:00–19:00",
@@ -51,11 +51,11 @@ const dummyStores = [
       owners: [
         {
           name: "Escaline Frans",
-          img: "https://scontent.fcpt2-1.fna.fbcdn.net/v/t39.30808-6/499067396_2583189655352751_4560748682788347491_n.jpg?stp=dst-jpg_tt6&cstp=mx969x1336&ctp=s969x1336&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFviYgvxopTCt-YprdOPWZLHqxtFzpKbUMerG0XOkptQ3h2cKIksu7lMH5C37ZqxUKQZ6RwaKykXP9Lr2siMhEs&_nc_ohc=nXdVUhZniQoQ7kNvwGuLeI2&_nc_oc=AdluHYg0LEK-Ez1c2W7LdOz-FEbzqObzt1xEr_GFbBCVX8mfG6H-HLwJVLeF0X3FZNw&_nc_zt=23&_nc_ht=scontent.fcpt2-1.fna&_nc_gid=wNtJgiHdWaJYGu-e2iISkg&oh=00_AfNnSIObiGfsDV33dGjKsw4sHzUN_jh2uqCPMxGeAyhhHg&oe=686A17CF",
+          img: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2FIMG_6040.jpeg?alt=media&token=790f8144-593a-4a94-a404-609e218f94a6",
         },
         {
           name: "Escaline F",
-          img: "https://scontent.fcpt2-1.fna.fbcdn.net/v/t39.30808-6/500392600_2584588668546183_4182317376385227384_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEak4jT2XxEBN5mD4518RiZbe0V0qH8AtVt7RXSofwC1bsob-gFDuKCF2dtFRZA9SR7lJ6DZM3Jj8sgB_0NA6G8&_nc_ohc=vykd4EQAV3wQ7kNvwEFRtNb&_nc_oc=AdmZg0YtQDylN380qhD7aeTlq1WHACCrrzahHpvEWdYaM3m4jmgvGAbsOF3d_oP4xBc&_nc_zt=23&_nc_ht=scontent.fcpt2-1.fna&_nc_gid=hgHHYbpHNdC8UiFFS9AnWw&oh=00_AfMKCL0pI63FJDHwxfI36Oy-ZamJsHxTSK7rZj5eZw08HA&oe=686A0C90",
+          img: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2FIMG_6041.jpeg?alt=media&token=1179304e-09c7-4698-82ac-192aefa9ab4b",
         },
       ],
       isOpen: true
