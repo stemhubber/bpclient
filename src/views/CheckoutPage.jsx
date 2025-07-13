@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './styles/CheckoutPage.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import AuthPage from '../auth/AuthPages';
+import { StoreController } from '../services/StoreController';
 
 const CheckoutPage = ({ order, handleConfirmAndPay, user, setUser, calculateTotal, totalOrders, store }) => {
   const [paymentMethod, setPaymentMethod] = useState('instore');
@@ -11,6 +12,8 @@ const CheckoutPage = ({ order, handleConfirmAndPay, user, setUser, calculateTota
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
+
+  const storex = StoreController.getStoreById(parseInt(id));
 
   const handleCheckout = async () => {
     setLoading(true);
@@ -73,13 +76,16 @@ const CheckoutPage = ({ order, handleConfirmAndPay, user, setUser, calculateTota
             <option value="online" disabled>Online Payment (Coming Soon)</option>
           </select>
         </label>
-
+        
+        <label>{storex?.paymentDetails?.description}</label>
+          
         <textarea
           className="checkout-note"
           placeholder="Add a note (e.g., no onions, ring when outside)"
           value={note}
           onChange={(e) => setNote(e.target.value)}
         ></textarea>
+
         {!user && <AuthPage onUserLoggedIn={setUser} dontNavigate={true}/>}
         {status && <p className="checkout-status">{status}</p>}
 

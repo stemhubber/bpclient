@@ -1,10 +1,10 @@
 export default class Product {
-  constructor(id, name, waitingTime, price, img, isAvailable, description) {
+  constructor(id, name, waitingTime, price, image, isAvailable, description) {
     this.id = id || Math.random().toString(36).substring(2,19);
     this.name = name || "";
     this.waitingTime = waitingTime ||"11 minutes";
-    this.price = price || "";
-    this.img = img || "";
+    this.price = Number(price) || 0;
+    this.image= image || "";
     this.isAvailable = isAvailable; 
     this.description = description || "";
   }
@@ -16,7 +16,7 @@ export default class Product {
       name: this.name,
       waitingTime: this.waitingTime,
       price: this.price,
-      img: this.img,
+      image: this.image,
       isAvailable: this.isAvailable,
       description: this.description
     };
@@ -25,6 +25,6 @@ export default class Product {
   // ✅ Create a Product instance from plain JSON
   static fromJSON(data) {
     if (!data) throw new Error("Invalid data to classify to Product.");
-    return new Product(data.id, data.name, data.waitingTime, data.price, data.img, data.isAvailable, data.description);
+    return new Product(data.id, data.name, data.waitingTime, data.price, data.image, data.isAvailable, data.description);
   }
 }

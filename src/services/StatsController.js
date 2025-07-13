@@ -24,7 +24,7 @@ class StatsController {
     const revenue = {};
     orders.forEach(({ product }) => {
       if (product?.name && product.price) {
-        revenue[product.name] = (revenue[product.name] || 0) + product.price;
+        revenue[product.name] = Number(revenue[product.name] || 0) + Number(product.price);
       }
     });
 
@@ -49,7 +49,7 @@ class StatsController {
 
     orders.forEach(({ product }) => {
       if (product?.name && product.price) {
-        totals[product.name] = (totals[product.name] || 0) + product.price;
+        totals[product.name] = Number(totals[product.name] || 0) + Number(product.price);
         counts[product.name] = (counts[product.name] || 0) + 1;
       }
     });
@@ -65,7 +65,7 @@ class StatsController {
     orders.forEach(({ user, product }) => {
       if (user?.uid && product?.price) {
         const name = user.name || user.uid;
-        customerMap[name] = (customerMap[name] || 0) + product.price;
+        customerMap[name] = Number(customerMap[name] || 0) + Number(product.price);
       }
     });
 
@@ -99,7 +99,7 @@ class StatsController {
 
   static getRevenueSummary(orders, limit = 3) {
     return this.getRevenueByProduct(orders, limit).map(
-      ({ name, total }) => `${name} earned R${total.toFixed(2)} in total.`
+      ({ name, total }) => `${name} earned R${Number(total).toFixed(2)} in total.`
     );
   }
 
@@ -111,7 +111,7 @@ class StatsController {
 
   static getCustomerSummary(orders, limit = 3) {
     return this.getTopCustomers(orders, limit).map(
-      ({ name, total }) => `👤 ${name} spent R${total.toFixed(2)} in total.`
+      ({ name, total }) => `👤 ${name} spent R${Number(total).toFixed(2)} in total.`
     );
   }
 

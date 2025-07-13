@@ -157,3 +157,8 @@ export const listenForSpeechCommand = ({ onResult, onError, lang = 'en-US' }) =>
   return `https://wa.me/${phone}?text=${encodedMessage}`;
 };
 
+export const cleanSentence = (input)=> {
+  return input.replace(/\s+/g, '').toLowerCase();
+}
+
+

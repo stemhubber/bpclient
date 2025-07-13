@@ -36,8 +36,9 @@ const dummyStores = [
       name: "Mornee Grills & Bar",
       logo: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2Fmornee-logo.png?alt=media&token=8877ecc2-b5ca-4213-a3f0-4ef3f5eb066c",
       wallpaper: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2Fmornee-wallpaper.png?alt=media&token=d0fb1688-ba5b-472e-bcd0-1687b6c36c77",
-      location: "19 Thole Street, Ngangelizwe, Mthatha",
+      location: "1339 Thole Street, Ngangelizwe, Mthatha",
       contacts: "+27604317270",
+      paymentDetails: {description: "Account number: 1052672159", paymentMethod: 'account'},
       coordinates: { lat: -31.606686, lng: 28.810295 }, 
       openingTimes: "Mon-Sun 10:00–19:00",
       description: "Mornee Grills & Bar is a fast food business in Ngangelizwe, Mthatha, proudly owned by young kasi-born entrepreneur Escalina Frans. She started in 2017 with no money, no kitchen, and no equipment—just a dream, hustle, and the boot of her car, selling amagwinya and tea at clinics and taxi ranks. With passion and self-belief, she taught herself how to cook, grew her menu, and now runs a mobile kitchen serving the community. Escalina is proof that you don’t need much to start—just heart, consistency, and purpose. Mornee Grills is here to lead kasi fast food with flavor and pride. Good Food, Good Mood — Support Your Black Child.",
@@ -54,8 +55,8 @@ const dummyStores = [
           img: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2FIMG_6040.jpeg?alt=media&token=790f8144-593a-4a94-a404-609e218f94a6",
         },
         {
-          name: "Escaline F",
-          img: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2FIMG_6041.jpeg?alt=media&token=1179304e-09c7-4698-82ac-192aefa9ab4b",
+          name: "Nasiphi Frans (Malume)",
+          img: "https://openclipart.org/image/800px/313668",
         },
       ],
       isOpen: true

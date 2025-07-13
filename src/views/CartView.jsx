@@ -20,7 +20,7 @@ const CartView = ({cartMessage,cart,handleRemoveFromCart,calculateTotal,handleAd
           <div className="cart-items">
             {cart.map((product, index) => (
               <div key={index} className="cart-item">
-                <img src={product.img} alt={product.name} />
+                <img src={product.image} alt={product.name} />
                 <div>
                   <h4>{product.name}</h4>
                   <p>R{product.price}</p>

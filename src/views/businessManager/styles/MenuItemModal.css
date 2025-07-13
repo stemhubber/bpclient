@@ -52,9 +52,27 @@
 .menu-checkbox {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 1rem;
+  gap: 10px;
+  font-size: 14px;
+  margin-top: 12px;
+  cursor: pointer;
+  user-select: none;
 }
+
+.menu-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #007AFF; /* modern blue */
+  cursor: pointer;
+}
+
+.menu-checkbox small {
+  color: #666;
+  margin-left: 4px;
+  font-size: 12px;
+  font-style: italic;
+}
+
 
 .menu-modal-actions {
   display: flex;

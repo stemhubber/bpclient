@@ -6,7 +6,8 @@ const ReceiptView = ({ orders, store, user, setSuccessOrder }) => {
   
   const orderId = orders[0]?.id;
   const timestamp = new Date().toLocaleString();
-  const total = orders?.reduce((sum, p) => sum + p?.product?.price, 0);
+  const total = orders?.reduce((sum, p) => sum + Number(p?.product?.price || 0),0);
+
   const navigate = useNavigate();
 
   if (!orders || orders.length === 0) return <p>No order found.</p>;
@@ -24,6 +25,7 @@ const ReceiptView = ({ orders, store, user, setSuccessOrder }) => {
     <div className="receipt-paper">
       <h2 className="receipt-title">{store?.name}</h2>
       <p>Contact: {store?.contacts}</p>
+      <p>{store?.paymentDetails?.description}</p>
       <h2 className="receipt-subtext">Order <strong>#{orderId}</strong></h2>
       <p className="receipt-subtext">Date: {timestamp}</p>
       <p><strong>{user.name}</strong> {user?.phone}</p>

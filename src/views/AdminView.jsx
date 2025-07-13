@@ -76,7 +76,7 @@ const AdminView = ({ orders, onStatusChange, stores, onChangeStoreDetails }) => 
 
   const calculateTotal = (cart) => {
     if (!Array.isArray(cart)) return 0;
-    return cart.reduce((sum, item) => sum + (item?.price || 0), 0);
+    return cart.reduce((sum, item) => sum + Number(item?.price || 0), 0);
   };
 
   return (
@@ -131,7 +131,7 @@ const AdminView = ({ orders, onStatusChange, stores, onChangeStoreDetails }) => 
                           <p>{index+1}. {product.name}</p>
                         </div>
                       ))}
-                      <h4>Total: {calculateTotal(order.products)}</h4>
+                      <h4>Total: R{calculateTotal(order.products)}</h4>
                     </div>
                     <div className="cart-item-actions">
                       <label htmlFor={`status-${order.id}`} className="cart-item-label">Change Status:</label>

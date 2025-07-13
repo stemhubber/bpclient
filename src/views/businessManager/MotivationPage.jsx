@@ -4,102 +4,106 @@ import "./styles/MotivationPage.css";
 const quotes = [
   {
     quote:
-      "Being your own boss means your success is your responsibility. Your business. Your hustle. Your time. Your growth.",
+      "Your business is your responsibility — your growth is your legacy. Own the outcome, refine the process.",
     author: "BitePilot",
   },
   {
     quote:
-      "Being your own boss means your success is your responsibility. Your business. Your hustle. Your time. Your growth.",
+      "Success in business is not accidental — it's intentional. Built through discipline, resilience, and daily effort.",
     author: "BitePilot",
   },
   {
     quote:
-      "Every great business is built on friendship, trust and persistence. Keep showing up. Keep improving.",
+      "Trust, consistency, and value — these are the cornerstones of every enduring business.",
     author: "BitePilot",
   },
   {
     quote:
-      "It doesn't have to be perfect. Just keep delivering. One sale, one customer, one day at a time.",
+      "Progress doesn’t require perfection — just commitment. Keep delivering, one customer at a time.",
     author: "BitePilot",
   },
   {
     quote:
-      "When the orders slow down, don't panic — improve. The quiet times are where smart growth begins.",
+      "Quiet seasons aren’t setbacks — they’re invitations to sharpen your strategy and strengthen your systems.",
     author: "BitePilot",
   },
   {
     quote:
-      "You are the system behind the success. Rest when needed, but never stop believing.",
+      "Behind every successful business is someone who chose not to quit — even when no one was watching.",
     author: "BitePilot",
   },
   {
     quote:
-      "Running a business isn't always pretty, but consistency builds what talent alone can't.",
+      "Consistency outperforms talent when talent stops showing up. Stay the course.",
     author: "BitePilot",
   },
   {
     quote:
-      "Customers come and go. But your effort, your name, your brand — that's legacy.",
+      "Customers may come and go — but your name, your reputation, and your standards endure.",
     author: "BitePilot",
   },
   {
     quote:
-      "Some days you win, some days you learn. That's how real businesses are built.",
+      "Some days build revenue. Others build resilience. Both are essential to the journey.",
     author: "BitePilot",
   },
   {
     quote:
-      "There's no magic in business — just focus, follow-up, and finishing what you started.",
+      "Business isn't built on motivation — it's built on follow-through. Start. Continue. Complete.",
     author: "BitePilot",
   },
   {
     quote:
-      "When it's quiet, that's your time to upgrade — your menu, your mindset, your systems.",
+      "Use the quiet to evolve — improve your offer, elevate your thinking, and optimize your flow.",
     author: "BitePilot",
   },
   {
     quote:
-      "You're not just running a business — you're building a future that didn't exist before you.",
+      "You’re not just earning — you’re shaping a future that didn’t exist before you decided to begin.",
     author: "BitePilot",
   },
   {
     quote:
-      "You may feel small, but you're doing what many only talk about. That's power.",
+      "It may feel small today, but your courage to start sets you apart from the crowd.",
     author: "BitePilot",
   },
   {
     quote:
-      "Don't compete on price. Compete on consistency, care, and customer experience.",
+      "The best businesses don’t compete on price — they compete on trust, delivery, and experience.",
     author: "BitePilot",
   },
   {
     quote:
-      "A slow week doesn't mean failure. It means you've got room to improve and prepare.",
+      "A slow week isn’t failure. It’s a signal. Reflect. Refine. Reset. Then go again.",
     author: "BitePilot",
   },
   {
     quote:
-      "Keep the promise even when no one is watching. That's how real businesses grow.",
+      "Integrity is doing what you said you’d do — especially when it’s inconvenient. That’s how businesses mature.",
     author: "BitePilot",
   },
   {
     quote:
-      "Some will doubt your hustle — until they see the results. Let your work answer back.",
+      "Let your results speak. Work in silence. Deliver in excellence.",
     author: "BitePilot",
   },
   {
-    quote: "Business isn't built in a day — it's built daily.",
+    quote:
+      "Sustainable businesses aren’t built in a moment — they’re built daily, with care and consistency.",
     author: "BitePilot",
   },
   {
-    quote: "You're not late. You're learning. You're leveling up.",
+    quote:
+      "You’re not behind — you’re becoming. Keep learning. Keep showing up. You’re right on time.",
     author: "BitePilot",
   },
   {
-    quote: "You're not late. You're learning. You're leveling up.",
+    quote:
+      "Build like it matters — because it does. Someone’s waiting for what only you can create.",
     author: "BitePilot",
-  },
+  }
 ];
+
 
 const getRandomQuote = () => {
   return quotes[Math.floor(Math.random() * quotes.length)];
@@ -121,12 +125,7 @@ const MotivationPage = ({ user, store }) => {
 
   const intros = [`Hey {name}! `, `Hi {name}!`, `Oh hey {name}!`];
 
-  const subs = [
-    `Time to move {store} forward — step by step`,
-    `Let's keep growing {store} with purpose`,
-    `Your consistency is building something powerful at {store}`,
-    `{store} is in good hands. Let's make today count`,
-  ];
+
 
   const getRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
@@ -139,10 +138,11 @@ const MotivationPage = ({ user, store }) => {
           <i className="fa fa-times" />
         </button>
         <h1 className="motivation-title">
-          {getRandom(intros).replace("{name}", user?.name || "there")}{" "}
-          {getRandom(subs).replace("{store}", store?.name || "your business")}{" "}
-          👋
+          {getRandom(intros).replace("{name}", user?.name || "there")}{"\n"}
+          Word of the day?
+          
         </h1>
+        <hr></hr>
 
         <blockquote className="motivation-quote">
           “{quote.quote}”<footer>- {quote.author}</footer>

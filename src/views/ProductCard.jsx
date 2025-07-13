@@ -5,7 +5,7 @@ const ProductCard = ({ product, onSelect }) => {
   return (
     <div className={`product-card-container ${product?.isAvailable? '': 'not-available-card'}`}>
       <img
-        src={product.img}
+        src={product.image}
         alt={product.name}
         className="product-card-image"
       />

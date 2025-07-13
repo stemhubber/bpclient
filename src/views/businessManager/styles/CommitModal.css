@@ -1,0 +1,20 @@
+/* Modal */
+.commit-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.commit-modal .modal-content {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.commit-modal .modal-actions button {
+  margin: 0 10px;
+}

@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: row;
   position: fixed;
-  top: 16.5rem;
+  bottom: 33rem;
   right: 0.1rem;
   justify-content: center;
   gap: 20px;
@@ -36,10 +36,49 @@
   border: none; /* Remove any default borders */
 }
 
+.menu-user-search-input {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  margin-left: auto;
+  outline: none;
+}
+
+.menu-user-search-input:focus {
+  border-color: #007AFF;
+  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+}
+
 .menu-button:hover {
   background-color: #575757; /* Slightly lighter on hover */
   transform: translateY(-3px); /* Lift the button on hover */
 }
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent dark */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5; /* make sure it's above modals/buttons */
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  backdrop-filter: blur(2px);
+}
+
+.loading-overlay i.fa-spinner {
+  margin-right: 10px;
+  font-size: 2rem;
+}
+
+
 
 /* 🌍 Responsive Behavior */
 @media (max-width: 768px) {
@@ -59,6 +98,7 @@
   .menu {
     align-items: center;
     padding: 10px 12px;
+    bottom: 0px;
   }
 
   .menu-button {

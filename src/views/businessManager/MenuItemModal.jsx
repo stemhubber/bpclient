@@ -8,7 +8,8 @@ const MenuItemModal = ({ isOpen, onClose, onSave, existingItem }) => {
     price: '',
     description: '',
     image: '',
-    available: true,
+    isAvailable: true,
+    waitingTime: ''
   });
 
   useEffect(() => {
@@ -20,13 +21,15 @@ const MenuItemModal = ({ isOpen, onClose, onSave, existingItem }) => {
         price: '',
         description: '',
         image: '',
-        available: true,
+        isAvailable: true,
+        waitingTime: '',
       });
     }
   }, [existingItem]);
 
   const handleChange = e => {
     const { name, value, type, checked } = e.target;
+    console.log(name, value, type, checked);
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
@@ -66,6 +69,10 @@ const MenuItemModal = ({ isOpen, onClose, onSave, existingItem }) => {
             Description
             <textarea name="description" value={formData.description} onChange={handleChange} />
           </label>
+          <label>
+            Waiting time
+            <input name="waitingTime" value={formData.waitingTime} onChange={handleChange} />
+          </label>
 
           <label>
             Image URL
@@ -73,13 +80,13 @@ const MenuItemModal = ({ isOpen, onClose, onSave, existingItem }) => {
           </label>
 
           <label className="menu-checkbox">
-            <input
+            
+            Available <small> (can customers buy this)</small> <input
               type="checkbox"
-              name="available"
-              checked={formData.available}
+              name="isAvailable"
+              checked={formData.isAvailable}
               onChange={handleChange}
             />
-            Available
           </label>
 
           <div className="menu-modal-actions">

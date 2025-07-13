@@ -78,7 +78,6 @@ function HomePage() {
     }, []);
   
   const handleAddToCart = (product) => {
-    playOrderSound(soundMap.added);
     setCart(prev => [...prev, product]);
     setCartMessage("Added "+product.name);
     setShowCart(true);
@@ -135,7 +134,7 @@ function HomePage() {
 
   const calculateTotal = (cart) => {
     if (!Array.isArray(cart)) return 0;
-    return cart.reduce((sum, item) => sum + (item?.price || 0), 0);
+    return cart.reduce((sum, item) => sum + (item?.price? parseInt(item?.price) : 0), 0);
   };
 
   const handleStoreRegister = (newStore) => {

@@ -57,7 +57,7 @@ const StoreOrderingUI = ({
         <Link to={`/admin/${storeDetails?.id}`}>Admin Panel</Link>
         <NotificationPopover store={storeDetails} storeId={storeDetails?.id}/>
       </nav>
-      {!user && <AuthPage onUserLoggedIn={setUser} dontNavigate={true}/>}
+      {/* {!user && <AuthPage onUserLoggedIn={setUser} dontNavigate={true}/>} */}
 
       {/* Loading Spinner */}
       {loading && (
