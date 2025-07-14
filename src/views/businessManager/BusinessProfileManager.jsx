@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './styles/BusinessProfileManager.css';
+import AdminReviewManager from './AdminReviewManager';
 
 const BusinessProfileManager = ({storeInfo}) => {
   const [formData, setFormData] = useState(storeInfo);
@@ -33,6 +34,7 @@ const BusinessProfileManager = ({storeInfo}) => {
       animate={{ opacity: 1, y: 0 }}
     >
       <h2 className="business-profile-title">Profile</h2>
+        {storeInfo.id && <AdminReviewManager storeId={storeInfo?.id}/>}
       <div className="business-profile-form">
         <label>
           Business Name
@@ -44,6 +46,7 @@ const BusinessProfileManager = ({storeInfo}) => {
           <input type="file" accept="image/*" onChange={(e) => handleImageChange('logo', e)} />
           <img src={formData.logo} alt="Logo" className="business-image-preview" />
         </label>
+
 
         <label>
           Wallpaper Image

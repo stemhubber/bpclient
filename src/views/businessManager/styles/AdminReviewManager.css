@@ -1,0 +1,102 @@
+.admin-review-manager {
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.admin-review-manager h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  color: #2c2c2c;
+}
+
+.admin-review-manager .review-list {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  gap: 1.2rem;
+}
+
+.admin-review-manager .admin-review-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #fdfdfd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.admin-review-manager .admin-review-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-review-manager .avatar-circle.small {
+  width: 36px;
+  height: 36px;
+  font-size: 0.9rem;
+  background: #007aff;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.admin-review-manager .stars span {
+  color: gold;
+  font-size: 1.2rem;
+}
+
+.admin-review-manager .admin-comment {
+  margin: 0.5rem 0;
+  font-style: italic;
+  color: #444;
+}
+
+.admin-review-manager .admin-media img,
+.admin-review-manager .admin-media video {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+}
+
+.admin-review-manager .delete-btn {
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.admin-review-manager .delete-btn:hover {
+  background: #e53935;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .admin-review-manager .admin-review-manager {
+    padding: 1rem 0.5rem;
+  }
+
+  .admin-review-manager .admin-review-card {
+    padding: 0.8rem;
+  }
+
+  .admin-review-manager .delete-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

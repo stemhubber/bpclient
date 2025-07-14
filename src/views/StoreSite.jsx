@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "./styles/StoreSite.css";
 import GallerySection from "./GallerySection";
 import StatsController from "../services/StatsController";
+import ReviewSlider from "./businessManager/ReviewSlider";
 
 const StoreSite = ({ stores }) => {
   const { id } = useParams();
@@ -90,6 +91,15 @@ const StoreSite = ({ stores }) => {
                 </div>
                 ))}
             </div>
+            </motion.div>}
+
+        {store?.id && <motion.div
+            className="store-site-owners"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            >
+             <ReviewSlider storeId={store?.id}/>
             </motion.div>}
 
         <motion.div

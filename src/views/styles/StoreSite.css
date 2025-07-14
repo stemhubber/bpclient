@@ -177,13 +177,21 @@
   }
   
   .owner-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0.5rem;
-  }
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.owner-img:hover {
+  transform: scale(3);
+  border-radius: 10%;
+  z-index: 10;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
   
   .owner-name {
     font-size: 0.95rem;

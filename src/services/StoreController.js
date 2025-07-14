@@ -51,12 +51,12 @@ const dummyStores = [
       ],
       owners: [
         {
-          name: "Escaline Frans",
+          name: "Escalina Frans",
           img: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2FIMG_6040.jpeg?alt=media&token=790f8144-593a-4a94-a404-609e218f94a6",
         },
         {
           name: "Nasiphi Frans (Malume)",
-          img: "https://openclipart.org/image/800px/313668",
+          img: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2Fmornee-owner-2.jpeg?alt=media&token=6d8897fc-c12b-4107-b161-9989c5ec458d",
         },
       ],
       isOpen: true
