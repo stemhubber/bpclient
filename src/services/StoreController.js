@@ -59,7 +59,8 @@ const dummyStores = [
           img: "https://firebasestorage.googleapis.com/v0/b/droppot.firebasestorage.app/o/pots%2Fbitepilot-assets%2Fmornee-owner-2.jpeg?alt=media&token=6d8897fc-c12b-4107-b161-9989c5ec458d",
         },
       ],
-      isOpen: true
+      isOpen: true,
+      code: 'b4cfea6a6f9a9490195ae55eb8734d80'
     },
     {
       id: 2,
@@ -89,7 +90,14 @@ const dummyStores = [
     },
   
     getStoreById: (id) => {
-      return stores.find((store) => store.id === id);
+      const store = stores.find((store) => store.id === id);
+      if (store) return store;
+      try {
+        return stores.find((store) => Number(store.id) === parseInt(id));
+      } catch (error) {
+        console.error('Store not found', error);
+        return null;
+      }
     },
   
     addStore: (newStore) => {

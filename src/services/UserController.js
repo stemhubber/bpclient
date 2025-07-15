@@ -51,7 +51,7 @@ class UserController {
   }
 
   async registerUser(userId, userDetails) {
-    console.log('Register user:', userId);
+    // console.log('Register user:', userId);
     const userRef = doc(db, 'users', userId);
     await setDoc(userRef, userDetails);
   }
