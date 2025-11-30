@@ -9,15 +9,15 @@ const dummyStores = [
       location: "Makhabeni Road, Khayelitsha, Cape Town, 7784",
       contacts: "+27717939711",
       coordinates: { lat: -34.043183692617774, lng: 18.660704821509025 },
-      openingTimes: "Mon-Sun 08:00–20:00",
+      openingTimes: "Mon-Sun 10:00–22:00",
       description: "Sweet n Lovely Kitchen offers authentic home-cooked African meals made with love and tradition.",
       gallery: [
-        {description: "Oh the ribs🤤", image: "https://lh5.googleusercontent.com/p/AF1QipOR_VLRHsnF7hnHj9SuCzmr5W8O8gDttxy9E0Mq=w1080-k-no"},
-        {description: "The Beef😋!!", image: "https://scontent-cpt1-1.xx.fbcdn.net/v/t1.6435-9/118004741_689229534963575_5944609981532448267_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHOSiYw0g0o6Xm8D5Je9TuFZnkQiLA5oI9meRCIsDmgj5oUH1UXNt9X9tdc7BC35gNxKWLmmEdbIxhJo3dVPJFD&_nc_ohc=tEQwrMRZkDoQ7kNvwEZ5ckD&_nc_oc=Adl3dAETiDArbzu0dyeFIx8YiRpMJ0fE56fIHbxUzXbap2nyAzfKY03fxRX8a8DbK-4&_nc_zt=23&_nc_ht=scontent-cpt1-1.xx&_nc_gid=ujqR_Sl9Kzegpbiu9BUQkQ&oh=00_AfFWqKfxakpCk8ekgAHAM_FzL7r4d8lwkz5jvMu46dzwrg&oe=6837E964"},
-        {description: "🤤", image: "https://scontent-cpt1-1.xx.fbcdn.net/v/t1.6435-9/134355008_779378592615335_1598276652237405342_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEWe4jPl3Li4DE7HGlukVyzZxCBINGQfIhnEIEg0ZB8iLgWC-YJOnGoAcapLHDf2yzdYt0Mjcvsr42wuG9fmtqo&_nc_ohc=28Vma4rMRM0Q7kNvwHB5myq&_nc_oc=Adk013rE7ei52TEO9OxnQhSRrDtphnWnu9iSaKgMFvm2Dpb-LrimLrjkZ-yqkKACVmg&_nc_zt=23&_nc_ht=scontent-cpt1-1.xx&_nc_gid=Ox1947Q9kmJyOzL2y6Xubw&oh=00_AfFRdRdC08NNud3NBT_YpL_rmGZKEJHDa5CQS94_VgadCA&oe=6837EA2E"},
-        {description: "The Beef😋!!", image: "https://scontent-cpt1-1.xx.fbcdn.net/v/t1.6435-9/118004741_689229534963575_5944609981532448267_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHOSiYw0g0o6Xm8D5Je9TuFZnkQiLA5oI9meRCIsDmgj5oUH1UXNt9X9tdc7BC35gNxKWLmmEdbIxhJo3dVPJFD&_nc_ohc=tEQwrMRZkDoQ7kNvwEZ5ckD&_nc_oc=Adl3dAETiDArbzu0dyeFIx8YiRpMJ0fE56fIHbxUzXbap2nyAzfKY03fxRX8a8DbK-4&_nc_zt=23&_nc_ht=scontent-cpt1-1.xx&_nc_gid=ujqR_Sl9Kzegpbiu9BUQkQ&oh=00_AfFWqKfxakpCk8ekgAHAM_FzL7r4d8lwkz5jvMu46dzwrg&oe=6837E964"},
-        {description: "Oh the ribs🤤", image: "https://lh5.googleusercontent.com/p/AF1QipOR_VLRHsnF7hnHj9SuCzmr5W8O8gDttxy9E0Mq=w1080-k-no"},
-        {description: "The Beef😋!!", image: "https://scontent-cpt1-1.xx.fbcdn.net/v/t1.6435-9/118004741_689229534963575_5944609981532448267_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHOSiYw0g0o6Xm8D5Je9TuFZnkQiLA5oI9meRCIsDmgj5oUH1UXNt9X9tdc7BC35gNxKWLmmEdbIxhJo3dVPJFD&_nc_ohc=tEQwrMRZkDoQ7kNvwEZ5ckD&_nc_oc=Adl3dAETiDArbzu0dyeFIx8YiRpMJ0fE56fIHbxUzXbap2nyAzfKY03fxRX8a8DbK-4&_nc_zt=23&_nc_ht=scontent-cpt1-1.xx&_nc_gid=ujqR_Sl9Kzegpbiu9BUQkQ&oh=00_AfFWqKfxakpCk8ekgAHAM_FzL7r4d8lwkz5jvMu46dzwrg&oe=6837E964"}
+        {description: "The ribs", image: "https://th.bing.com/th/id/R.75246629a858133b48c6438a568093a2?rik=opRPq4M29Kde%2bA&pid=ImgRaw&r=0"},
+        {description: "Pizza!!", image: "https://th.bing.com/th/id/OIP.saDYANjgi4O5RK2fu2Ys6wHaFj?w=222&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1"},
+        {description: "🤤", image: "https://tse1.mm.bing.net/th/id/OIP.FULYN-BCSDyH3220jqJLowHaI6?cb=ucfimg2&pid=ImgDet&ucfimg=1&w=474&h=570&rs=1&o=7&rm=3"},
+        {description: "Beef!", image: "https://tse3.mm.bing.net/th/id/OIP.16R0coyTwoVuHvJ-KDkYvwHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"},
+        {description: "More Pizza", image: "https://th.bing.com/th/id/OIP.o3RkjwemGyIftoSJriI_fQHaEK?w=265&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1"},
+        {description: "😋!!", image: "https://tse1.mm.bing.net/th/id/OIP.qT4sT7Hi9bul4zwWLA36wgHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"}
       ],
       owners: [
         {
@@ -60,8 +60,7 @@ const dummyStores = [
         },
       ],
       isOpen: true,
-      code: 'b4cfea6a6f9a9490195ae55eb8734d80'
-    },
+      code: 'b4cfea6a6f9a9490195ae55eb8734d80'},
     {
       id: 2,
       name: "Joe's Pizza Spot",
