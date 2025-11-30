@@ -64,6 +64,10 @@ const UserDetailsPage = ({ userData }) => {
 
   }
   const switchToAdmin = ()=>{
+    const isadmin = sessionStorage.getItem('bitepilot-admin');
+    if (isadmin){
+      sessionStorage.removeItem('bitepilot-admin');
+    }
     const pin = window.prompt("Enter admin pin");
     if(pin === '0000'){
       sessionStorage.setItem('bitepilot-admin',true);

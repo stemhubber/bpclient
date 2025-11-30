@@ -23,6 +23,7 @@ export default function AdminAuthWrapper({ children }) {
     if (s) {
       setStore(s);
       setStoreCode(s.code);
+      if (!s.code) setAuthorized(true)
     } else {
       setModalText({ text: "Store not found!", status: "error" });
     }
